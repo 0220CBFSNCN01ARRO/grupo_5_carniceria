@@ -19,6 +19,10 @@
 - Costillita
 - Matambre
 
+**Carne de aves** :
+
+- Pollo
+
 > `El servicio esta dirigido al publico en general,   
 >  y especialmente a aquellos amantes de una de las tradiciones argentas mas hermosas`
 > 
@@ -33,3 +37,7 @@
 [http://www.muge.com.ar/](http://www.muge.com.ar/) > _Por la simpleza del diseño_
 
 [https://www.proveeduriapiaf.com.ar/](https://www.proveeduriapiaf.com.ar/) > _Por la creatividad del diseño_
+
+[http://www.piala.com.ar/](http://www.piala.com.ar/) > _Por como presenta los productos_
+
+[https://www.bistecca.com.ar/](https://www.bistecca.com.ar/) > _Por las imagenes y diseño del logo_
