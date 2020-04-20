@@ -19,9 +19,15 @@
 - Costillita
 - Matambre
 
+**Carne de pollo** :
+
+
+**Embutidos** :
+
 > `El servicio esta dirigido al publico en general,   
 >  y especialmente a aquellos amantes de una de las tradiciones argentas mas hermosas`
 > 
+
 ##__Sitios de referencias__
 
 [https://www.res.com.ar/](https://www.res.com.ar/) > _Por como presenta los productos_
