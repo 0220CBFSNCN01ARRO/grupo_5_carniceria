@@ -1,4 +1,4 @@
-#GRUPO 5 CARNICERIA#
+﻿#GRUPO 5 CARNICERIA#
 ---
 
 
@@ -19,16 +19,13 @@
 - Costillita
 - Matambre
 
-<<<<<<< HEAD
 **Carne de aves** :
 
 - Pollo
-=======
-**Carne de pollo** :
-
 
 **Embutidos** :
->>>>>>> 85bd0b3a9263ad36dee0cabb53452db539ede4b0
+ 
+- Salame
 
 > `El servicio esta dirigido al publico en general,   
 >  y especialmente a aquellos amantes de una de las tradiciones argentas mas hermosas`
