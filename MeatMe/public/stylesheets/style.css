@@ -1,0 +1,30 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.encabezado-formulario {
+  padding: 30px 0;
+}
+
+p {
+  text-transform: uppercase;
+  font-style: italic;
+}
+
+h1 {
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.container {
+  border-top: black solid 2px;
+  border-bottom: black solid 2px;
+  border-right: slategrey solid 10px;
+  border-left: slategrey solid 10px;
+  padding: 30px;
+}

@@ -1,0 +1,5 @@
+## Conclusiones
+
+- Es muy importante coordinar las tareas para evitar pisarnos con las mismas.
+- Para evitar problemas con git o precisamente por lo del punto anterior, antes de comenzar a trabajar, realizar un pull para ver si alguien del equipo realizo algun cambio.
+- Las reuniones son fundamentales para llegar a un acuerdo de que como se van a realizar las tareas y del contenido de las mismas.
