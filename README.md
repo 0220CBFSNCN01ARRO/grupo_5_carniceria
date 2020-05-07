@@ -46,3 +46,6 @@
 [http://www.piala.com.ar/](http://www.piala.com.ar/) > _Por como presenta los productos_
 
 [https://www.bistecca.com.ar/](https://www.bistecca.com.ar/) > _Por las imagenes y diseño del logo_
+
+##Tablero Trellio##
+[https://trello.com/b/BKVmV6zG/meat-me](https://trello.com/b/BKVmV6zG/meat-me)
