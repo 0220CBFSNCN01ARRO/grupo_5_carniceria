@@ -44,6 +44,10 @@ footer, footer li{
     border-color: white;
 }
 .card-img-top {
-   box-sizing:content-box;
+   width: 330px;
+   height: 250px;
+   object-fit: cover;
+   margin: auto;
+   padding-top: 1px;
 
 }
