@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+
+}
+nav ul li, nav ul li a{
+    text-decoration: none;
+    list-style: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    margin: auto;
+    color: black;
+}
+.nav-item:hover{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+div.seccionprincipal {
+    padding: 0px;
+    margin-top: 3px;
+    height: auto;
+    width: 33%;
+}
+.img-fluid{
+    height:100%;
+    width: 100%;
+}
+footer, footer li{
+    color: white;
+    font-weight: lighter;
+    background-color: black;
+}
+.copyright{
+    color: white;
+    font-family: Helvetica;
+    font-weight: lighter;
+}
+
+/* @media(max-width: 768px){
+
+} */

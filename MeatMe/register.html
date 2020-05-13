@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>MeatMe | Crear usuario</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1349bde661.js" crossorigin="anonymous"></script>
+
+    <link href="./public/stylesheets/style_home.css" rel="stylesheet">
+</head>
+    <body>
+      <header>
+        <!-- menu -->
+            <nav class="container-fluid d-flex">
+                <img class="my-3" width= 7% src="public/img/Logo Meat Me - copia.png" alt="logo">
+                <!-- barra menu -->
+                <ul class="container d-flex justify-content-end my-3">
+                    <li><a class="nav-item" href="/">INICIO</a></li>
+                    <li><a class="nav-item" href="/empresa">EMPRESA</a></li>
+                    <li><a class="nav-item" href="/productos">PRODUCTOS</a></li>
+                    <li><a class="nav-item" href="/recetas">RECETAS</a></li>
+                    <li><a class="nav-item" href="/contacto">CONTACTO</a></li>
+                    <li><a class="nav-item" href="/carrito-venta">CARRITO VENTA</a></li>
+                    <li><a class="nav-item" href="/login">INICIAR SESION</a></li>
+                </ul>
+
+            </nav>
+            <!-- imagen slider -->
+         <img class="container-fluid" src="public/img/logo expandido.png" alt="foto-principal">
+    </header>
+        <div class="container">
+            <div class="encabezado-formulario mb-5" class="row">
+                <div class="col-12 d-flex justify-content-center border-top border-dark pt-3 my-5">
+                    <h1 class="text-uppercase" >Formulario de registro</h1></div>
+                <div class="alert alert-primary" role="alert" class="col-12 d-flex justify-content-center">
+                    <p class="text-center mb-0">Una vez registrado podra utilizar nuestro carrito de compras exclusivo para clientes y acceder a las ofertas.</p>
+                </div>
+            </div>
+        <div class="container-fluid my-5 border-bottom border-dark">
+            <div class="form-group justify-content-center row">
+                <label for="inputName" class="col-sm-3 col-form-label">Nombre: </label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" id="inputName">
+                </div>
+              </div>
+              <div class="form-group justify-content-center row">
+                <label for="inputApellido" class="col-sm-3 col-form-label">Apellido: </label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" id="inputApellido">
+                </div>
+              </div>
+              <div class="form-group justify-content-center row">
+                <label for="inputEmail" class="col-sm-3 col-form-label">E-mail: </label>
+                <div class="col-sm-7">
+                  <input type="email" class="form-control" id="inputEmail">
+                </div>
+              </div>
+            <div class="form-group justify-content-center row">
+                <label for="inputContraseña" class="col-sm-3 col-form-label">Contraseña: </label>
+                <div class="col-sm-7">
+                  <input type="password" class="form-control" id="inputContraseña">
+                </div>
+              </div>
+            <div class="form-group justify-content-center row">
+                <label for="inputConfirmarContraseña" class="col-sm-3 col-form-label">Confirmar Contraseña: </label>
+                <div class="col-sm-7">
+                  <input type="password" class="form-control" id="inputConfirmarContraseña">
+                </div>
+              </div>
+              <div class="form-group justify-content-center row">
+                <label for="inputDireccion" class="col-sm-3 col-form-label">Direccion: </label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" id="inputDireccion">
+                </div>
+              </div>
+              <div class="form-group justify-content-center row">
+                <label for="inputLocalidad" class="col-sm-3 col-form-label">Localidad: </label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" id="inputLocalidad">
+                </div>
+              </div>
+              <div class="form-group justify-content-center row">
+                <label for="inputProvincia" class="col-sm-3 col-form-label">Provincia: </label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" id="inputProvincia">
+                </div>
+              </div>
+            <div class="form-group justify-content-center row">
+                 <button class="btn btn-primary my-5">Enviar</button>
+            </div>
+        </div>
+        </div>
+        <footer class="page-footer font-small mdb-color lighten-3 pt-4">
+
+          <!-- Footer Links -->
+          <div class="container text-center text-md-left">
+        
+            <!-- Grid row -->
+            <div class="row">
+        
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-2 mb-1">
+        
+                <!-- Content -->
+                <h5 class="font-weight-bold text-uppercase mb-4">PEDIDOS ONLINE</h5>
+                <p>Ingresá tus datos, seleccioná tus cortes favoritos y listo. ¡Pedir delivery en una carniceria nunca había sido tan sencillo, con MeatMe lo único difícil será decidir qué comer!</p>
+                
+                <button id="btn-registrarse" type="button" class="btn btn-blue-grey btn-light">REGISTRARSE</button>
+                
+        
+              </div>
+              <!-- Grid column -->
+        
+              <hr class="clearfix w-100 d-md-none">
+        
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 mx-auto my-md-4 my-0 mt-4 mb-1">
+        
+                <!-- Links -->
+                <h5 class="font-weight-bold text-uppercase mb-4">SECCIONES</h5>
+        
+                <ul class="list-unstyled">
+                  <li>
+                    <p>
+                      <a class="copyright" href="/!">INICIO</a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a class="copyright" href="/empresa">EMPRESA</a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a class="copyright" href="/productos!">PRODUCTOS</a>
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      <a class="copyright" href="/recetas">RECETAS</a>
+                    </p>
+                  </li>
+                </ul>
+        
+              </div>
+              <!-- Grid column -->
+        
+              <hr class="clearfix w-100 d-md-none">
+        
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
+        
+                <!-- Contact details -->
+                <h5 class="font-weight-bold text-uppercase mb-4">CONTACTOS</h5>
+        
+                <ul class="list-unstyled">
+                  <li>
+                    <p>
+                      <i class="fas fa-home mr-3"></i> Pellegrini 1548, Rosario</p>
+                  </li>
+                  <li>
+                    <p>
+                      <i class="fas fa-envelope mr-3"></i> info@meatme.com.ar</p>
+                  </li>
+                  <li>
+                    <p>
+                      <i class="fab fa-lg fa-whatsapp mr-3"></i> +5493417343448</p>
+                  </li>
+                  <li>
+                    <p>
+                      <i class="fas fa-phone mr-3"></i> 0341-4248787</p>
+                  </li>
+                </ul>
+        
+              </div>
+              <!-- Grid column -->
+        
+              <hr class="clearfix w-100 d-md-none">
+        
+              <!-- Grid column -->
+              <div class="col-md-1 col-lg-1 text-center mx-auto my-4">
+        
+                <!-- Social buttons -->
+                <h5 class="font-weight-bold text-uppercase mb-4">SEGUINOS</h5>
+        
+                <!-- Facebook -->
+                <a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
+                <!-- Instagram +-->
+                <a class="btn-floating btn-lg btn-ins" type="button" role="button"><i class="fab fa-instagram"></i></a>
+                  <!-- Twitter -->
+                <a class="btn-floating btn-lg btn-tw" type="button" role="button"><i class="fab fa-twitter"></i></a>
+      
+              </div>
+              <!-- Grid column -->
+        
+            </div>
+            <!-- Grid row -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center">© 2020 Copyright:
+          <a id="copyright" href="/">Meat Me</a>
+        </div>
+        <!-- Copyright -->
+          </div>
+          <!-- Footer Links -->
+        
+          
+        
+        </footer>
+    </body>
+</html>
