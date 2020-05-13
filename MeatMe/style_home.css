@@ -38,3 +38,12 @@ footer, footer li{
     font-family: Helvetica;
     font-weight: lighter;
 }
+
+.btn-primary {
+    background-color: black;
+    border-color: white;
+}
+.card-img-top {
+   box-sizing:content-box;
+
+}
