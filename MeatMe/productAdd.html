@@ -42,43 +42,43 @@
                     <h1 class="text-uppercase">Formulario de carga de Producto</h1>
                 </div>
                 <div class="alert alert-primary" role="alert" class="col-12 d-flex justify-content-center">
-                    <p class="text-center mb-0">Una vez completados los casillero, hacer click en "agregar" para que se incorpore el producto.<br>Completar Kg por unidad solo si el producto se vende por unidad.</p>
+                    <p class="text-center mb-0">Una vez completados los casillero, hacer click en "agregar" para que se incorpore el producto.</p>
                 </div>
             </div>
         <div class="container-fluid my-5 border-bottom border-dark">
           <form>
             <div class="form-group justify-content-center row">
-                <label for="inputTipoProducto" class="col-sm-3 col-form-label">Tipo de Producto: </label>
+                <label for="inputTipoProducto" class="col-sm-3 col-form-label">Tipo de Producto: *</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" id="inputTipoProducto">
+                  <input type="text" class="form-control" id="inputTipoProducto" required>
                 </div>
               </div>
               <div class="form-group justify-content-center row">
-                <label for="inputNombreProducto" class="col-sm-3 col-form-label">Nombre del Producto: </label>
+                <label for="inputNombreProducto" class="col-sm-3 col-form-label">Nombre del Producto: *</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" id="inputNombreProducto">
+                  <input type="text" class="form-control" id="inputNombreProducto" required>
                 </div>
               </div>
               <div class="form-group justify-content-center row">
-                <label for="inputKg/Unidad" class="col-sm-3 col-form-label">Kg o Unidad: </label>
+                <label for="inputKg/Unidad" class="col-sm-3 col-form-label">Kg o Unidad: *</label>
                 <div class="col-sm-7">
-                  <input type="email" class="form-control" id="inputKg/Unidad">
+                  <input type="text" class="form-control" id="inputKg/Unidad" required>
                 </div>
               </div>
             <div class="form-group justify-content-center row">
                 <label for="inputKgPorUnidad" class="col-sm-3 col-form-label">Kg por Unidad: </label>
                 <div class="col-sm-7">
-                  <input type="password" class="form-control" id="inputKgPorUnidad">
+                  <input type="text" class="form-control" id="inputKgPorUnidad" placeholder="Completar Kg por unidad solo si el producto se vende por unidad">
                 </div>
               </div>
             <div class="form-group justify-content-center row">
-                <label for="inputPrecioPorKg" class="col-sm-3 col-form-label">Precio por Kg: </label>
+                <label for="inputPrecioPorKg" class="col-sm-3 col-form-label">Precio por Kg: *</label>
                 <div class="col-sm-7">
-                  <input type="password" class="form-control" id="inputPrecioPorKg">
+                  <input type="text" class="form-control" id="inputPrecioPorKg" required>
                 </div>
               </div>
             <div class="form-group justify-content-center row">
-                 <button class="btn btn-primary my-5">Agregar</button>
+                 <button class="submit" class="btn btn-primary my-5">Agregar</button>
             </div>
           </form>
           </div>
