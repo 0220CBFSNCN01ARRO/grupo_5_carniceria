@@ -12,7 +12,7 @@ nav ul li, nav ul li a{
     color: black;
 }
 .nav-item:hover{
-    background-color: black;
+    background-color: grey;
     color: white;
     text-decoration: none;
 }
@@ -27,6 +27,10 @@ div.seccionprincipal {
     height:100%;
     width: 100%;
 }
+#logo-menu {
+    width: 40%;
+}
+
 footer, footer li{
     color: white;
     font-weight: lighter;
