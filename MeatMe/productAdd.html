@@ -2,7 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8">
-    <title>MeatMe | Administrador</title>
+    <title>MeatMe | Home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,71 +14,102 @@
     <script src="https://kit.fontawesome.com/1349bde661.js" crossorigin="anonymous"></script>
 
     <link href="./public/stylesheets/style_home.css" rel="stylesheet">
-</head>
-    <body>
+  </head>
+    
+  <body>
       <div class="container-fluid">
         <header>
-            <!-- menu -->
-                <nav class="container-fluid d-flex">
-                    <img class="my-3" width= 7% src="public/img/Logo Meat Me - copia.png" alt="logo">
-                    <!-- barra menu -->
-                    <ul class="container d-flex justify-content-end my-3">
-                        <li><a class="nav-item" href="/">INICIO</a></li>
-                        <li><a class="nav-item" href="/empresa">EMPRESA</a></li>
-                        <li><a class="nav-item" href="/productos">PRODUCTOS</a></li>
-                        <li><a class="nav-item" href="/recetas">RECETAS</a></li>
-                        <li><a class="nav-item" href="/contacto">CONTACTO</a></li>
-                        <li><a class="nav-item" href="/carrito-venta">CARRITO VENTA</a></li>
-                        <li><a class="nav-item" href="/login">INICIAR SESION</a></li>
-                    </ul>
+          <!-- menu -->
+          <nav class="navbar navbar-expand-md navbar-light purple lighten-4 mb-4">
 
-                </nav>
-                <!-- imagen slider -->
-             <img class="container-fluid" src="public/img/logo expandido.png" alt="foto-principal">
-        </header>
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="/"><img id= "logo-menu" src="public/img/Logo Meat Me - copia.png"></a>
+          
+            <!-- Collapse button -->
+            <button class="navbar-toggler navbar-toggler-right toggler-example purple darken-3" type="button" data-toggle="collapse"
+              data-target="#navbarSupportedContent41" aria-controls="navbarSupportedContent41" aria-expanded="false"
+              aria-label="Toggle navigation"><span class="white-text"><i class="fas fa-bars fa-1x"></i></span></button>
+          
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent41">
+          
+              <!-- Links -->
+              <ul class=" navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">INICIO <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">EMPRESA</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">PRODUCTOS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">RECETAS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">CONTACTOS</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">REGISTRARSE</a>
+                </li>
+              </ul>
+              <!-- Links -->
+          
+            </div>
+            <!-- Collapsible content -->
+          
+          </nav>
+          <!--/.Navbar-->
+              <!-- imagen slider -->
+           <img class="container-fluid" src="public/img/logo expandido.png" alt="foto-principal">
+      </header>
       <div class="container">
             <div class="encabezado-formulario mb-5" class="row">
                 <div class="col-12 d-flex justify-content-center border-top border-dark pt-3 my-5">
                     <h1 class="text-uppercase">Formulario de carga de Producto</h1>
                 </div>
                 <div class="alert alert-primary" role="alert" class="col-12 d-flex justify-content-center">
-                    <p class="text-center mb-0">Una vez completados los casillero, hacer click en "agregar" para que se incorpore el producto.<br>Completar Kg por unidad solo si el producto se vende por unidad.</p>
+                    <p class="text-center mb-0">Una vez completados los casillero, hacer click en "agregar" para que se incorpore el producto.</p>
                 </div>
             </div>
         <div class="container-fluid my-5 border-bottom border-dark">
           <form>
             <div class="form-group justify-content-center row">
-                <label for="inputTipoProducto" class="col-sm-3 col-form-label">Tipo de Producto: </label>
+                <label for="inputTipoProducto" class="col-sm-3 col-form-label">Tipo de Producto: *</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" id="inputTipoProducto">
+                  <input type="text" class="form-control" id="inputTipoProducto" required>
                 </div>
               </div>
               <div class="form-group justify-content-center row">
-                <label for="inputNombreProducto" class="col-sm-3 col-form-label">Nombre del Producto: </label>
+                <label for="inputNombreProducto" class="col-sm-3 col-form-label">Nombre del Producto: *</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" id="inputNombreProducto">
+                  <input type="text" class="form-control" id="inputNombreProducto" required>
                 </div>
               </div>
               <div class="form-group justify-content-center row">
-                <label for="inputKg/Unidad" class="col-sm-3 col-form-label">Kg o Unidad: </label>
+                <label for="inputKg/Unidad" class="col-sm-3 col-form-label">Kg o Unidad: *</label>
                 <div class="col-sm-7">
-                  <input type="email" class="form-control" id="inputKg/Unidad">
+                  <input type="text" class="form-control" id="inputKg/Unidad" required>
                 </div>
               </div>
             <div class="form-group justify-content-center row">
                 <label for="inputKgPorUnidad" class="col-sm-3 col-form-label">Kg por Unidad: </label>
                 <div class="col-sm-7">
-                  <input type="password" class="form-control" id="inputKgPorUnidad">
+                  <input type="text" class="form-control" id="inputKgPorUnidad" placeholder="Completar Kg por unidad solo si el producto se vende por unidad">
                 </div>
               </div>
             <div class="form-group justify-content-center row">
-                <label for="inputPrecioPorKg" class="col-sm-3 col-form-label">Precio por Kg: </label>
+                <label for="inputPrecioPorKg" class="col-sm-3 col-form-label">Precio por Kg: *</label>
                 <div class="col-sm-7">
-                  <input type="password" class="form-control" id="inputPrecioPorKg">
+                  <input type="text" class="form-control" id="inputPrecioPorKg" required>
                 </div>
               </div>
             <div class="form-group justify-content-center row">
-                 <button class="btn btn-primary my-5">Agregar</button>
+                 <button type="submit" class="btn btn-primary my-5">Agregar</button>
             </div>
           </form>
           </div>

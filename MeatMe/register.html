@@ -16,22 +16,53 @@
     <link href="./public/stylesheets/style_home.css" rel="stylesheet">
 </head>
     <body>
+      <div class="container-fluid"></div>
       <header>
         <!-- menu -->
-            <nav class="container-fluid d-flex">
-                <img class="my-3" width= 7% src="public/img/Logo Meat Me - copia.png" alt="logo">
-                <!-- barra menu -->
-                <ul class="container d-flex justify-content-end my-3">
-                    <li><a class="nav-item" href="/">INICIO</a></li>
-                    <li><a class="nav-item" href="/empresa">EMPRESA</a></li>
-                    <li><a class="nav-item" href="/productos">PRODUCTOS</a></li>
-                    <li><a class="nav-item" href="/recetas">RECETAS</a></li>
-                    <li><a class="nav-item" href="/contacto">CONTACTO</a></li>
-                    <li><a class="nav-item" href="/carrito-venta">CARRITO VENTA</a></li>
-                    <li><a class="nav-item" href="/login">INICIAR SESION</a></li>
-                </ul>
+        <nav class="navbar navbar-expand-md navbar-light purple lighten-4 mb-4">
 
-            </nav>
+          <!-- Navbar brand -->
+          <a class="navbar-brand" href="/"><img id= "logo-menu" src="public/img/Logo Meat Me - copia.png"></a>
+        
+          <!-- Collapse button -->
+          <button class="navbar-toggler navbar-toggler-right toggler-example purple darken-3" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent41" aria-controls="navbarSupportedContent41" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="white-text"><i class="fas fa-bars fa-1x"></i></span></button>
+        
+          <!-- Collapsible content -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent41">
+        
+            <!-- Links -->
+            <ul class=" navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">INICIO <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">EMPRESA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">PRODUCTOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">RECETAS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">CONTACTOS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">REGISTRARSE</a>
+              </li>
+            </ul>
+            <!-- Links -->
+        
+          </div>
+          <!-- Collapsible content -->
+        
+        </nav>
+        <!--/.Navbar-->
             <!-- imagen slider -->
          <img class="container-fluid" src="public/img/logo expandido.png" alt="foto-principal">
     </header>
@@ -43,35 +74,36 @@
                     <p class="text-center mb-0">Una vez registrado podra utilizar nuestro carrito de compras exclusivo para clientes y acceder a las ofertas.</p>
                 </div>
             </div>
+        <form>
         <div class="container-fluid my-5 border-bottom border-dark">
             <div class="form-group justify-content-center row">
-                <label for="inputName" class="col-sm-3 col-form-label">Nombre: </label>
+                <label for="inputName" class="col-sm-3 col-form-label">Nombre: *</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" id="inputName">
+                  <input type="text" class="form-control" id="inputName" required>
                 </div>
               </div>
               <div class="form-group justify-content-center row">
-                <label for="inputApellido" class="col-sm-3 col-form-label">Apellido: </label>
+                <label for="inputApellido" class="col-sm-3 col-form-label">Apellido: *</label>
                 <div class="col-sm-7">
-                  <input type="text" class="form-control" id="inputApellido">
+                  <input type="text" class="form-control" id="inputApellido" required>
                 </div>
               </div>
               <div class="form-group justify-content-center row">
-                <label for="inputEmail" class="col-sm-3 col-form-label">E-mail: </label>
+                <label for="inputEmail" class="col-sm-3 col-form-label">E-mail: *</label>
                 <div class="col-sm-7">
-                  <input type="email" class="form-control" id="inputEmail">
+                  <input type="email" class="form-control" id="inputEmail" required>
                 </div>
               </div>
             <div class="form-group justify-content-center row">
-                <label for="inputContraseña" class="col-sm-3 col-form-label">Contraseña: </label>
+                <label for="inputContraseña" class="col-sm-3 col-form-label">Contraseña: *</label>
                 <div class="col-sm-7">
-                  <input type="password" class="form-control" id="inputContraseña">
+                  <input type="password" class="form-control" id="inputContraseña" placeholder="Solo letras y numeros" required pattern="[A-Za-z0-9]+ maxlength="15" required>
                 </div>
               </div>
             <div class="form-group justify-content-center row">
-                <label for="inputConfirmarContraseña" class="col-sm-3 col-form-label">Confirmar Contraseña: </label>
+                <label for="inputConfirmarContraseña" class="col-sm-3 col-form-label">Confirmar Contraseña: *</label>
                 <div class="col-sm-7">
-                  <input type="password" class="form-control" id="inputConfirmarContraseña">
+                  <input type="password" class="form-control" id="inputConfirmarContraseña" required>
                 </div>
               </div>
               <div class="form-group justify-content-center row">
@@ -93,9 +125,10 @@
                 </div>
               </div>
             <div class="form-group justify-content-center row">
-                 <button class="btn btn-primary my-5">Enviar</button>
+                 <button type="submit" class="btn btn-primary my-5">Enviar</button>
             </div>
         </div>
+      </form>
         </div>
         <footer class="page-footer font-small mdb-color lighten-3 pt-4">
 

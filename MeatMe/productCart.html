@@ -1,32 +1,153 @@
 <!DOCTYPE html>
 <html lang="es">
+
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Carga Productos</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        
-        <link href="style_home.css" rel="stylesheet">
+        <title>MeatMe | Home</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/1349bde661.js" crossorigin="anonymous"></script>
+
+        <link href="./public/stylesheets/style_home.css" rel="stylesheet">
     </head>
-    <body>
-      <div class="container-fluid">
+
+<body>
+    <div class="container-fluid">
         <header>
             <!-- menu -->
-                <nav class="container-fluid d-flex">
-                    <img class="my-3" width= 7% src="public/img/Logo Meat Me - copia.png" alt="logo">
-                    <!-- barra menu -->
-                    <ul class="container d-flex justify-content-end my-3">
-                        <li><a class="nav-item" href="/">INICIO</a></li>
-                        <li><a class="nav-item" href="/empresa">EMPRESA</a></li>
-                        <li><a class="nav-item" href="productos.html">PRODUCTOS</a></li>
-                        <li><a class="nav-item" href="/recetas">RECETAS</a></li>
-                        <li><a class="nav-item" href="/contacto">CONTACTO</a></li>
-                        <li><a class="nav-item" href="/carrito-venta">CARRITO VENTA</a></li>
-                        <li><a class="nav-item" href="./formularioUsuario.html">INICIAR SESION</a></li>
-                    </ul>
+            <nav class="navbar navbar-expand-md navbar-light purple lighten-4 mb-4">
 
-                </nav>
+              <!-- Navbar brand -->
+              <a class="navbar-brand" href="/"><img id= "logo-menu" src="public/img/Logo Meat Me - copia.png"></a>
+            
+              <!-- Collapse button -->
+              <button class="navbar-toggler navbar-toggler-right toggler-example purple darken-3" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent41" aria-controls="navbarSupportedContent41" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="white-text"><i class="fas fa-bars fa-1x"></i></span></button>
+            
+              <!-- Collapsible content -->
+              <div class="collapse navbar-collapse" id="navbarSupportedContent41">
+            
+                <!-- Links -->
+                <ul class=" navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">INICIO <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">EMPRESA</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">PRODUCTOS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">RECETAS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">CONTACTOS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">REGISTRARSE</a>
+                  </li>
+                </ul>
+                <!-- Links -->
+            
+              </div>
+              <!-- Collapsible content -->
+            
+            </nav>
+            <!--/.Navbar-->
                 <!-- imagen slider -->
              <img class="container-fluid" src="public/img/logo expandido.png" alt="foto-principal">
         </header>
-        
+
+        <section class="cart-section">
+            <div class="container row col-md-12">
+                <div class="cart-table justify-content-center mx-auto">
+                    <h3>Tus Compras</h3>
+                    <div class="cart-table-warp">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="producto-th">Producto</th>
+                                    <th class="cantidad-th">Cantidad</th>
+                                    <th class="precio-th">Precio</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="product-col">
+                                        <img class="thumb" src="public/img/costeletas.jpeg" alt="">
+                                        <div class="title">
+                                            <h4>Costeletas Cerdo</h4>
+                                            <p>$25.90</p>
+                                        </div>
+                                    </td>
+                                    <td class="cantidad-col">
+                                        <div class="cantidad">
+                                            <div class="pro-cant">
+                                                <input type="text" value="1">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="total-col">
+                                        <h4>$25.90</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="product-col">
+                                        <img class="thumb" src="public/img/Chuleton.png" alt="">
+                                        <div class="title">
+                                            <h4>Chuleton</h4>
+                                            <p>$45.90</p>
+                                        </div>
+                                    </td>
+                                    <td class="cantidad-col">
+                                        <div class="cantidad">
+                                            <div class="pro-cant">
+                                                <input type="text" value="1">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="total-col">
+                                        <h4>$45.90</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="product-col">
+                                        <img class="thumb" src="public/img/elegida17.jpg" alt="">
+                                        <div class="title">
+                                            <h4>Vacio</h4>
+                                            <p>$55.90</p>
+                                        </div>
+                                    </td>
+                                    <td class="cantidad-col">
+                                        <div class="cantidad">
+                                            <div class="pro-cant">
+                                                <input type="text" value="1">
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="total-col">
+                                        <h4>$55.90</h4>
+                                    </td>
+                                </tr>
+                 
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="total-cost">
+                        <h6>Total <span>$</span></h6>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- cart section end -->
