@@ -60,7 +60,7 @@ footer, footer li{
     width: 75px;
     height: auto;
 }
-
-/* @media(max-width: 768px){
-
-} */
+.imagen-productDetail {
+    max-width: 75%;
+    max-height: 75%;
+}
