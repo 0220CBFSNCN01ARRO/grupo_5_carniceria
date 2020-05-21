@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include("partials/header")  %> 
+<div class="container-fluid">
+  <div class="m-0 row justify-content-between">
+    <div class="seccionprincipal"><a href="/productos/vacuno"><img src="/img/3Asset 1.png" class="img-fluid"></a></div>
+    <div class="seccionprincipal"><a href="/productos/cerdo"><img src="/img/3Asset 4.png" class="img-fluid"></a></div>
+    <div class="seccionprincipal"><a href="/productos/pollo"><img src="/img/3Section Pollo.png" class="img-fluid"></a></div>
+  </div>
+
+</div>
+<!-- seccion delivery -->
+<div class="container-fluid d-flex ">
+<a href="/login" class="d-flex justify-content-center m-auto"><img src="/img/3section delivery2.png" class="img-fluid"></a>
+</div>
+<!-- seccion recetas -->
+<div class="container-fluid d-flex my-1">
+<a href="/recetas" class="content-fluid"><img src="/img/3recetas.png" class="img-fluid"></a>
+</div>
+<%- include("partials/footer") %>
