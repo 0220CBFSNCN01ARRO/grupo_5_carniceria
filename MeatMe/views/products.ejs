@@ -1,87 +1,17 @@
 <%- include("partials/header")  %>
 <div class="row row-cols-1 row-cols-md-4 mx-auto justify-content-between">
-        
+    <% for ( producto of productosData) { %> 
     <div class="col mb-4">
         <div class="card">
-            <img src="/img/elegida17.jpg" class="card-img-top" alt="Vacio">
+            <a href="/product/<%= producto.category %>/detail/<%= producto.id %>"><img src="/img/<%= producto.image %> " class="card-img-top" alt="Vacio"></a>
             <div class="card-body">
-                <h5 class="card-title">Vacio</h5>
-                <p class="card-text">Vacio de Ternera</p>
+                <h5 class="card-title"><%= producto.name %> </h5>
+                <p class="card-text"><%= producto.name %> de <%= producto.category %></p>
             </div>
-            <a class="btn btn-primary" href="/carrito-venta" role="button">Agregar al carrito</a>
+            <a class="btn btn-primary" href="/product/cart" role="button">Agregar al carrito</a>
         </div>
     </div>
-    <div class="col mb-4">
-        <div class="card">
-            <img src="/img/img_12921.jpg" class="card-img-top" alt="Chuleta">
-            <div class="card-body">
-                <h5 class="card-title">Chuleta</h5>
-                <p class="card-text">Chuleta de Ternera</p>
-            </div>
-            <a class="btn btn-primary" href="/carrito-venta" role="button">Agregar al carrito</a>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <div class="card">
-            <img src="/img/images.jpeg" class="card-img-top" alt="matambre">
-            <div class="card-body">
-                <h5 class="card-title">Matambre</h5>
-                <p class="card-text">Matambre de Ternera</p>
-            </div>
-            <a class="btn btn-primary" href="/carrito-venta" role="button">Agregar al carrito</a>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <div class="card">
-            <img src="/img/unnamed.jpg" class="card-img-top" alt="Bife">
-            <div class="card-body">
-                <h5 class="card-title">Bife</h5>
-                <p class="card-text">Bife de Ternera</p>
-            </div>
-            <a class="btn btn-primary" href="/carrito-venta" role="button">Agregar al carrito</a>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <div class="card">
-            <img src="/img/costeletas.jpeg" class="card-img-top" alt="Costeleta Cerdo">
-            <div class="card-body">
-                <h5 class="card-title">Costeleta Cerdo</h5>
-                <p class="card-text">Costeletas Cerdo por Unidad</p>
-            </div>
-            <a class="btn btn-primary" href="/carrito-venta" role="button">Agregar al carrito</a>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <div class="card">
-            <img src="/img/costillacerdo.jpeg" class="card-img-top" alt="Costilla Cerdo">
-            <div class="card-body">
-                <h5 class="card-title">Costilla Cerdo</h5>
-                <p class="card-text">Costilla Cerdo</p>
-            </div>
-            <a class="btn btn-primary" href="/carrito-venta" role="button">Agregar al carrito</a>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <div class="card">
-            <img src="/img/pollo.jpg" class="card-img-top" alt="Pollo">
-            <div class="card-body">
-                <h5 class="card-title">Pollo</h5>
-                <p class="card-text">Pollo calidad Premium</p>
-            </div>
-            <a class="btn btn-primary" href="/carrito-venta" role="button">Agregar al carrito</a>
-        </div>
-    </div>
-    <div class="col mb-4">
-        <div class="card">
-            <img src="/img/maxresdefault-2.jpg" class="card-img-top" alt="Lomo">
-            <div class="card-body">
-                <h5 class="card-title">Lomo</h5>
-                <p class="card-text">Lomo de Ternera</p>
-            </div>
-            <a class="btn btn-primary" href="/carrito-venta" role="button">Agregar al carrito</a>
-        </div>
-    </div>
-</div>
+<% } %> 
 </div>
 
 <%- include("partials/footer") %>

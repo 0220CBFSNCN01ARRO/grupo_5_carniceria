@@ -1,0 +1,371 @@
+[
+    {
+        "id":1,
+        "name":"Vacio",
+        "category":"vacuno",
+        "price":3198.14,
+        "image":"elegida17.jpg",
+        "thematic":"Tools",
+        "keywords":["Echo","Uniform","India","Papa"]
+    },
+
+    {
+        "id":2,
+        "name":"Chuleta",
+        "category":"vacuno",
+        "price":1445.12,
+        "image":"img_12921.jpg",
+        "thematic":"Kids",
+        "keywords":["Mike","India","Golf","November"]
+    },
+
+    {
+        "id":3,
+        "name":"Matambre",
+        "category":"vacuno",
+        "price":2313.95,
+        "image":"images.jpeg",
+        "thematic":"Sports",
+        "keywords":["Tango","Zulu","X-ray"]
+    },
+
+    {
+        "id":4,
+        "name":"Bife",
+        "category":"vacuno",
+        "price":1673.33,
+        "image":"unnamed.jpg",
+        "thematic":"Home",
+        "keywords":["Kilo","Hotel","Uniform","Uniform","Kilo"]
+    },
+
+    {
+        "id":5,
+        "name":"Aonyx cinerea",
+        "category":"vacuno",
+        "price":2117.26,
+        "image":"product_5.jpg",
+        "thematic":"Clothing",
+        "keywords":["Zulu","Sierra","Kilo","Uniform"]
+    },
+
+    {
+        "id":6,
+        "name":"Alcelaphus buselaphus cokii",
+        "category":"vacuno",
+        "price":2726.31,
+        "image":"product_6.jpg",
+        "thematic":"Garden",
+        "keywords":["Mike","Kilo"]
+    },
+
+    {
+        "id":7,
+        "name":"Lama glama",
+        "category":"vacuno",
+        "price":3307.9,
+        "image":"product_7.jpg",
+        "thematic":"Beauty",
+        "keywords":["Juliett","Kilo","India"]
+    },
+
+    {
+        "id":8,
+        "name":"Kobus leche robertsi",
+        "category":"vacuno",
+        "price":3813.7,
+        "image":"product_8.jpg",
+        "thematic":"Grocery",
+        "keywords":["Victor","Oscar","Whiskey","Sierra"]
+    },
+
+    {
+        "id":9,
+        "name":"Tursiops truncatus",
+        "category":"vacuno",
+        "price":4099.3,
+        "image":"product_9.jpg",
+        "thematic":"Garden",
+        "keywords":["Bravo","Victor"]
+    },
+
+    {
+        "id":10,
+        "name":"Potos flavus",
+        "category":"vacuno",
+        "price":1256.53,
+        "image":"product_10.jpg",
+        "thematic":"Kids"
+        ,"keywords":["Bravo","Bravo"]
+    },
+
+    {
+        "id":11,
+        "name":"Merops nubicus",
+        "category":"vacuno",
+        "price":2895.76,
+        "image":"product_11.jpg",
+        "thematic":"Tools",
+        "keywords":["Alfa","Bravo","Quebec","Alfa"]
+    },
+
+    {
+        "id":12,
+        "name":"Corvus albicollis",
+        "category":"vacuno",
+        "price":4914.71,
+        "image":"product_12.jpg",
+        "thematic":"Grocery",
+        "keywords":["November","Victor","Juliett","Juliett"]
+    },
+
+    {
+        "id":13,
+        "name":"unavailable",
+        "category":"vacuno",
+        "price":1501.04,
+        "image":"product_13.jpg",
+        "thematic":"Sports",
+        "keywords":["Delta","Golf","Lima","Oscar","Sierra"]
+    },
+
+    {
+        "id":14,
+        "name":"Eubalaena australis",
+        "category":"vacuno",
+        "price":4096.25,
+        "image":"product_14.jpg",
+        "thematic":"Outdoors",
+        "keywords":["Oscar","Sierra"]
+    },
+
+    {
+        "id":15,
+        "name":"Alopex lagopus",
+        "category":"cerdo",
+        "price":4572.54,
+        "image":"product_15.jpg",
+        "thematic":"Sports",
+        "keywords":["Alfa","Whiskey","Yankee","November"]
+    },
+
+    {
+        "id":16,
+        "name":"Dendrohyrax brucel",
+        "category":"cerdo",
+        "price":1113.52,
+        "image":"product_16.jpg",
+        "thematic":"Sports",
+        "keywords":["Uniform","Mike","Uniform"]
+    },
+
+    {
+        "id":17,
+        "name":"Macropus agilis",
+        "category":"cerdo",
+        "price":3353.64,
+        "image":"product_17.jpg",
+        "thematic":"Automotive",
+        "keywords":["Uniform","Alfa","Sierra"]
+    },
+
+    {
+        "id":18,
+        "name":"Odocoileus hemionus",
+        "category":"cerdo",
+        "price":3569.52,
+        "image":"product_18.jpg",
+        "thematic":"Tools",
+        "keywords":["Sierra","Foxtrot","Romeo"]
+    },
+
+    {
+        "id":19,
+        "name":"Gekko gecko",
+        "category":"cerdo",
+        "price":1149.12,
+        "image":"product_19.jpg",
+        "thematic":"Movies",
+        "keywords":["India","Whiskey"]
+    },
+
+    {
+        "id":20,
+        "name":"Agelaius phoeniceus",
+        "category":"cerdo",
+        "price":4926.91,
+        "image":"product_20.jpg",
+        "thematic":"Electronics",
+        "keywords":["Alfa","Victor","Delta"]
+    },
+
+    {
+        "id":21,
+        "name":"Callipepla gambelii",
+        "category":"cerdo",
+        "price":1826.29,
+        "image":"product_21.jpg",
+        "thematic":"Electronics",
+        "keywords":["Tango","Quebec","Alfa","Bravo"]
+    },
+
+    {
+        "id":22,
+        "name":"Caiman crocodilus",
+        "category":"cerdo",
+        "price":1846.06,
+        "image":"product_22.jpg",
+        "thematic":"Home",
+        "keywords":["India","Papa","November","Sierra"]
+    },
+
+    {
+        "id":23,
+        "name":"Limnocorax flavirostra",
+        "category":"cerdo",
+        "price":1942.07,
+        "image":"product_23.jpg",
+        "thematic":"Music",
+        "keywords":["Romeo","November"]
+    },
+
+    {
+        "id":24,
+        "name":"Neotis denhami",
+        "category":"cerdo",
+        "price":1223.16,
+        "image":"product_24.jpg",
+        "thematic":"Clothing",
+        "keywords":["Yankee","Charlie"]
+    },
+
+    {
+        "id":25,
+        "name":"Bassariscus astutus",
+        "category":"cerdo",
+        "price":1528.67,
+        "image":"product_25.jpg",
+        "thematic":"Grocery",
+        "keywords":["Kilo","Sierra","Victor","Quebec","Charlie"]
+    },
+
+    {
+        "id":26,
+        "name":"Ninox superciliaris",
+        "category":"cerdo",
+        "price":1384.67,
+        "image":"product_26.jpg",
+        "thematic":"Grocery",
+        "keywords":["Romeo","Whiskey","Whiskey"]
+    },
+
+    {
+        "id":27,
+        "name":"Funambulus pennati",
+        "category":"cerdo",
+        "price":3365.92,
+        "image":"product_27.jpg",
+        "thematic":"Clothing",
+        "keywords":["November","Quebec","Juliett"]
+    },
+
+    {
+        "id":28,
+        "name":"Falco mexicanus",
+        "category":"cerdo",
+        "price":2198.09,
+        "image":"product_28.jpg",
+        "thematic":"Health",
+        "keywords":["Foxtrot","Charlie","Juliett"]
+    },
+
+    {
+        "id":29,
+        "name":"Dasyurus maculatus",
+        "category":"pollo",
+        "price":2042.22,
+        "image":"product_29.jpg",
+        "thematic":"Kids",
+        "keywords":["Oscar","Hotel","Oscar","Victor","Yankee"]
+    },
+
+    {
+        "id":30,
+        "name":"Psittacula krameri",
+        "category":"pollo",
+        "price":2284.91,
+        "image":"product_30.jpg",
+        "thematic":"Shoes",
+        "keywords":["Romeo","Hotel","Papa"]
+    },
+
+    {
+        "id":31,
+        "name":"Sylvilagus floridanus",
+        "category":"pollo",
+        "price":3253.36,
+        "image":"product_31.jpg",
+        "thematic":"Beauty",
+        "keywords":["Hotel","Whiskey"]
+    },
+
+    {
+        "id":32,
+        "name":"Rhea americana",
+        "category":"pollo",
+        "price":1994.1,
+        "image":"product_32.jpg",
+        "thematic":"Shoes",
+        "keywords":["Foxtrot","Quebec","Hotel","Foxtrot"]
+    },
+
+    {
+        "id":33,
+        "name":"Actophilornis africanus",
+        "category":"pollo",
+        "price":4447.82,
+        "image":"product_33.jpg",
+        "thematic":"Home",
+        "keywords":["Yankee","Zulu","Foxtrot"]
+    },
+
+    {
+        "id":34,
+        "name":"Ciconia episcopus",
+        "category":"pollo",
+        "price":955.9,
+        "image":"product_34.jpg",
+        "thematic":"Automotive",
+        "keywords":["Yankee","Foxtrot"]
+    },
+
+    {
+        "id":35,
+        "name":"Taurotagus oryx",
+        "category":"pollo",
+        "price":2967.02,
+        "image":"product_35.jpg",
+        "thematic":"Sports",
+        "keywords":["Alfa","Foxtrot","Uniform","Echo","Golf"]
+    },
+
+    {
+        "id":36,
+        "name":"unavailable",
+        "category":"pollo",
+        "price":4536.76,
+        "image":"product_36.jpg",
+        "thematic":"Home",
+        "keywords":["Delta","Yankee","Foxtrot","Sierra"]
+    },
+
+    {
+        "id":37,
+        "name":"Alouatta seniculus",
+        "category":"pollo",
+        "price":4239.06,
+        "image":"product_37.jpg",
+        "thematic":"Music",
+        "keywords":["Charlie","Quebec","Echo","Tango"]
+    }
+]
