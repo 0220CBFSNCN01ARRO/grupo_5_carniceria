@@ -10,7 +10,7 @@ let cerdo = productosData.filter(producto => producto.category == "cerdo");
 let pollo = productosData.filter(producto => producto.category == "pollo");
 
 
-module.exports = {
+const controller = {
   show: (req, res, next) => {
     res.render("product", { productosData })
   },
@@ -20,7 +20,6 @@ module.exports = {
 
     if (categoria == "vacuno") {
       productos = vacuno;
-      console.log(productos)
     }
     if (categoria == "cerdo") {
       productos = cerdo;
@@ -50,12 +49,12 @@ module.exports = {
     res.render("productCart");
   },
 
-  // Create - Form to create
+  // Create - crear
   create: (req, res) => {
     res.render('productAdd');
   },
 
-  // Create -  Method to store
+  // Create -  guardar
 	store: (req, res) => {
 		let ids = productosData.map(prod=>prod.id) 
 		let id = Math.max(...ids) + 1 
@@ -67,20 +66,20 @@ module.exports = {
 			... req.body,
 			image: 'default-image.png'
 		}
-		let final = [...products,productoNuevo];
+		let final = [...productosData,productoNuevo];
 		fs.writeFileSync(productosPath, JSON.stringify(final,null,' '));
 		res.redirect('/product')
 	},
 
-  // Update - Form to edit
+  // Update - editar
 	edit: (req, res) => {
-		let producto = productosData.find(prod => prod.id == id);
-    res.render("productDetail", { 
+		let producto = productosData.find(prod => prod.id == req.params.id);
+    res.render("productEdit", { 
       producto 
     });
   },
 
-  // Update - Method to update
+  // Update - actualizar
 	update: (req, res) => {
 
 		req.body.price = Number(req.body.price)
@@ -109,4 +108,4 @@ module.exports = {
 
 };
 
-
+module.exports = controller;

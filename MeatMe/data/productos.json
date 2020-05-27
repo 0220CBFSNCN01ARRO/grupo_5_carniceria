@@ -1,83 +1,101 @@
-[{
-    "id": 1,
-    "name": "Asado de tira",
-    "category": "vacuno",
-    "price": "$389",
-    "image": "user_1.jpg",
-    "type": "kg",
-    "weight": 1
-  }, {
-    "id": 2,
-    "name": "Matambre de cerdo",
-    "category": "cerdo",
-    "price": "$420",
-    "image": "user_2.jpg",
-    "type": "kg",
-    "weight": 1
-  }, {
-    "id": 3,
-    "name": "Pechuga de pollo",
-    "category": "pollo",
-    "price": "$7.28",
-    "image": "user_3.jpg",
-    "type": "Yakitri",
-    "weight": 1
-  }, {
-    "id": 4,
-    "name": "Chorizo",
-    "category": "Achuras",
-    "price": "$398",
-    "image": "user_4.jpg",
-    "type": "unidad",
-    "weight": 0.2
-  }, {
-    "id": 5,
-    "name": "Morcilla",
-    "category": "Achuras",
-    "price": "$375",
-    "image": "user_5.jpg",
-    "type": "unidad",
-    "weight": 0.15
-  }, {
-    "id": 6,
-    "name": "Solomillo",
-    "category": "cerdo",
-    "price": "$399",
-    "image": "user_6.jpg",
-    "type": "unidad",
-    "weight": 0.75
-  }, {
-    "id": 7,
-    "name": "Vacio",
-    "category": "vacuno",
-    "price": "$420",
-    "image": "user_7.jpg",
-    "type": "kg",
-    "weight": 1
-  }, {
-    "id": 8,
-    "name": "Carre de cerdo",
-    "category": "cerdo",
-    "price": "$330",
-    "image": "user_8.jpg",
-    "type": "kg",
-    "weight": 1
-  }, {
-    "id": 9,
-    "name": "Cuadril",
-    "category": "vacuno",
-    "price": "$368",
-    "image": "user_9.jpg",
-    "type": "kg",
-    "weight": 1
-  },
-  {
-    "id": 10,
-    "name": "Carne Picada",
-    "category": "vacuno",
-    "price": "$325",
-    "image": "user_10.jpg",
-    "type": "kg",
-    "weight": 1
-  }
+[
+ {
+  "id": 1,
+  "name": "Asado de tira",
+  "category": "vacuno",
+  "price": "$389",
+  "image": "user_1.jpg",
+  "type": "kg",
+  "weight": 1
+ },
+ {
+  "id": 2,
+  "name": "Matambre de cerdo",
+  "category": "cerdo",
+  "price": "$420",
+  "image": "user_2.jpg",
+  "type": "kg",
+  "weight": 1
+ },
+ {
+  "id": 3,
+  "name": "Pechuga de pollo",
+  "category": "pollo",
+  "price": "$7.28",
+  "image": "user_3.jpg",
+  "type": "Yakitri",
+  "weight": 1
+ },
+ {
+  "id": 4,
+  "name": "Chorizo",
+  "category": "Achuras",
+  "price": "$398",
+  "image": "user_4.jpg",
+  "type": "unidad",
+  "weight": 0.2
+ },
+ {
+  "id": 5,
+  "name": "Morcilla",
+  "category": "Achuras",
+  "price": "$375",
+  "image": "user_5.jpg",
+  "type": "unidad",
+  "weight": 0.15
+ },
+ {
+  "id": 6,
+  "name": "Solomillo",
+  "category": "cerdo",
+  "price": "$399",
+  "image": "user_6.jpg",
+  "type": "unidad",
+  "weight": 0.75
+ },
+ {
+  "id": 7,
+  "name": "Vacio",
+  "category": "vacuno",
+  "price": "$420",
+  "image": "user_7.jpg",
+  "type": "kg",
+  "weight": 1
+ },
+ {
+  "id": 8,
+  "name": "Carre de cerdo",
+  "category": "cerdo",
+  "price": "$330",
+  "image": "user_8.jpg",
+  "type": "kg",
+  "weight": 1
+ },
+ {
+  "id": 9,
+  "name": "Cuadril",
+  "category": "vacuno",
+  "price": "$368",
+  "image": "user_9.jpg",
+  "type": "kg",
+  "weight": 1
+ },
+ {
+  "id": 10,
+  "name": "Carne Picada",
+  "category": "vacuno",
+  "price": "$325",
+  "image": "user_10.jpg",
+  "type": "kg",
+  "weight": 1
+ },
+ {
+  "id": 11,
+  "category": "carne vacuna",
+  "name": "costilitas",
+  "type": "kg",
+  "weight": "",
+  "price": 123,
+  "image": "default-image.png"
+ }
 ]
