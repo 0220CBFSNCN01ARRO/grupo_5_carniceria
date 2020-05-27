@@ -12,7 +12,7 @@ let pollo = productosData.filter(producto => producto.category == "pollo");
 
 module.exports = {
   show: (req, res, next) => {
-    res.render("products", { productosData })
+    res.render("product", { productosData })
   },
   byCategory: (req, res) => {
     let categoria = req.params.category;
@@ -69,7 +69,7 @@ module.exports = {
 		}
 		let final = [...products,productoNuevo];
 		fs.writeFileSync(productosPath, JSON.stringify(final,null,' '));
-		res.redirect('/products')
+		res.redirect('/product')
 	},
 
   // Update - Form to edit
@@ -97,14 +97,14 @@ module.exports = {
 			}
 		})
 		fs.writeFileSync(productosPath, JSON.stringify(final, null, ' '));
-		res.redirect('/products')
+		res.redirect('/product')
   },
   
   // Delete -
 	destroy : (req, res) => {
 		let final = productosData.filter(prod=> prod.id != req.params.id)
 		fs.writeFileSync(productosPath, JSON.stringify(final, null, ' '));
-		res.redirect('/products')
+		res.redirect('/product')
 	}
 
 };
