@@ -1,5 +1,18 @@
-## Conclusiones
+#SPRINT 1
+___
+## Conclusiones:
 
 - Es muy importante coordinar las tareas para evitar pisarnos con las mismas.
 - Para evitar problemas con git o precisamente por lo del punto anterior, antes de comenzar a trabajar, realizar un pull para ver si alguien del equipo realizo algun cambio.
 - Las reuniones son fundamentales para llegar a un acuerdo de que como se van a realizar las tareas y del contenido de las mismas.
+##
+
+
+#SPRINT 2
+___
+## Conclusiones:
+
+- En cuanto a los positivo creo que tenemos una buena comunicacion, estamos en contacto mediante whatsapp cada 2 o 3 dias nos comunicamos para ver como vamos con el proyecto y tambien como vamos avanzando en la cursada. Tambien hacemos videosllamdas por zoom para trabajar juntos cuando ya tenemos mas o menos armado lo que hizo cada uno, como para ver los detalles.
+- En cuanto a lo negativo tuvimos problemas con GIT pero nada que no se solucione, solo falta de practica, y problemas con el tiempo por el tema de que cada uno tiene su trabajo y mas lo de la cursada, por ahi no se llega bien con el tiempo.
+##
+ 
