@@ -9,15 +9,6 @@
   "weight": 1
  },
  {
-  "id": 2,
-  "category": "cerdo",
-  "name": "costilitas",
-  "type": "as",
-  "weight": "2",
-  "price": "567",
-  "image": "user_2.jpg"
- },
- {
   "id": 3,
   "name": "Pechuga de pollo",
   "category": "pollo",
