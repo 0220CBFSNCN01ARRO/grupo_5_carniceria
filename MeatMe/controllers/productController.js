@@ -82,7 +82,7 @@ const controller = {
   // Update - actualizar
 	update: (req, res) => {
 
-		req.body.price = Number(req.body.price)
+	
 
 		let final = productosData.map(prod => {
 			if(prod.id == req.params.id){
@@ -96,14 +96,14 @@ const controller = {
 			}
 		})
 		fs.writeFileSync(productosPath, JSON.stringify(final, null, ' '));
-		res.redirect('/product')
+		res.redirect('/')
   },
   
   // Delete -
 	destroy : (req, res) => {
 		let final = productosData.filter(prod=> prod.id != req.params.id)
 		fs.writeFileSync(productosPath, JSON.stringify(final, null, ' '));
-		res.redirect('/product')
+		res.redirect('/')
 	}
 
 };

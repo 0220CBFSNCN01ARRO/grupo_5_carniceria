@@ -10,12 +10,12 @@
  },
  {
   "id": 2,
-  "name": "Matambre de cerdo",
   "category": "cerdo",
-  "price": "$420",
-  "image": "user_2.jpg",
-  "type": "kg",
-  "weight": 1
+  "name": "costilitas",
+  "type": "as",
+  "weight": "2",
+  "price": "567",
+  "image": "user_2.jpg"
  },
  {
   "id": 3,
