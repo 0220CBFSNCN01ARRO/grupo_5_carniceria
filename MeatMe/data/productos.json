@@ -1,12 +1,12 @@
 [
  {
   "id": 1,
-  "name": "Asado de tira",
   "category": "vacuno",
-  "price": "$389",
-  "image": "user_1.jpg",
+  "name": "Asado",
   "type": "kg",
-  "weight": 1
+  "weight": "1",
+  "price": "450",
+  "image": "image-1591224628707.jpg"
  },
  {
   "id": 3,
@@ -46,12 +46,12 @@
  },
  {
   "id": 7,
-  "name": "Vacio",
   "category": "vacuno",
-  "price": "$420",
-  "image": "user_7.jpg",
+  "name": "Vacio",
   "type": "kg",
-  "weight": 1
+  "weight": "1",
+  "price": "310",
+  "image": "image-1591225016657.jpg"
  },
  {
   "id": 8,
@@ -64,29 +64,47 @@
  },
  {
   "id": 9,
-  "name": "Cuadril",
   "category": "vacuno",
-  "price": "$368",
-  "image": "user_9.jpg",
+  "name": "Cuadril",
   "type": "kg",
-  "weight": 1
+  "weight": "1",
+  "price": "280",
+  "image": "image-1591225083881.jpg"
  },
  {
   "id": 10,
-  "name": "Carne Picada",
   "category": "vacuno",
-  "price": "$325",
-  "image": "user_10.jpg",
+  "name": "Carne",
   "type": "kg",
-  "weight": 1
+  "weight": "1",
+  "price": "90",
+  "image": "image-1591225138537.jpg"
  },
  {
   "id": 11,
-  "category": "carne vacuna",
+  "category": "carne",
   "name": "costilitas",
   "type": "kg",
   "weight": "",
-  "price": 123,
+  "price": "333",
   "image": "default-image.png"
+ },
+ {
+  "id": 12,
+  "category": "pollo",
+  "name": "alitas",
+  "type": "Unidad",
+  "weight": "0",
+  "price": "62",
+  "image": "default-image.png"
+ },
+ {
+  "id": 13,
+  "category": "pollo",
+  "name": "pechuga",
+  "type": "kg",
+  "weight": "",
+  "price": 120,
+  "image": "image-1591223980659.jpg"
  }
 ]

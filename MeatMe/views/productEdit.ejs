@@ -10,49 +10,48 @@
         </div>
     </div>
 <div class="container-fluid my-5 border-bottom border-dark">
-  <form action="/product/edit/<%= producto.id %>?_method=PUT" method="POST">
+  <form action="/product/edit/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data" >
     <div class="form-group justify-content-center row">
-        <label for="inputTipoProducto" class="col-sm-3 col-form-label"><%= producto.category %></label>
+        <label for="inputTipoProducto" class="col-sm-3 col-form-label">Tipo de Producto: *</label>
         <div class="col-sm-7">
-          <input type="text" class="form-control" id="inputTipoProducto" name="category" value="" required>
+          <input type="text" class="form-control" id="inputTipoProducto" name="category" value=<%= producto.category %> required>
         </div>
       </div>
       <div class="form-group justify-content-center row">
-        <label for="inputNombreProducto" class="col-sm-3 col-form-label"><%= producto.name %></label>
+        <label for="inputNombreProducto" class="col-sm-3 col-form-label">Nombre del Producto: *</label>
         <div class="col-sm-7">
-          <input type="text" class="form-control" id="inputNombreProducto" name="name" value="" required>
+          <input type="text" class="form-control" id="inputNombreProducto" name="name" value=<%= producto.name %> required>
         </div>
       </div>
       <div class="form-group justify-content-center row">
-        <label for="inputKg/Unidad" class="col-sm-3 col-form-label"><%= producto.style %></label>
+        <label for="inputKg/Unidad" class="col-sm-3 col-form-label">Kg o Unidad: *</label>
         <div class="col-sm-7">
-          <input type="text" class="form-control" id="inputKg/Unidad" name="type" value="" required>
+          <input type="text" class="form-control" id="inputKg/Unidad" name="type" value=<%= producto.type %> required>
         </div>
       </div>
     <div class="form-group justify-content-center row">
-        <label for="inputKgPorUnidad" class="col-sm-3 col-form-label"><%= producto.weight %></label>
+        <label for="inputKgPorUnidad" class="col-sm-3 col-form-label">Kg por Unidad: </label>
         <div class="col-sm-7">
-          <input type="number" class="form-control" id="inputKgPorUnidad" name="weight" value="" placeholder="Completar Kg por unidad solo si el producto se vende por unidad">
+          <input type="number" class="form-control" id="inputKgPorUnidad" name="weight" value=<%= producto.weight %> placeholder="Completar Kg por unidad solo si el producto se vende por unidad">
         </div>
       </div>
     <div class="form-group justify-content-center row">
-        <label for="inputPrecioPorKg" class="col-sm-3 col-form-label"><%= producto.price %></label>
+        <label for="inputPrecioPorKg" class="col-sm-3 col-form-label">Precio por Kg: *</label>
         <div class="col-sm-7">
-          <input type="number" class="form-control" id="inputPrecioPorKg" name="price" value="" required>
+          <input type="number" class="form-control" id="inputPrecioPorKg" name="price" value=<%= producto.price %> required>
         </div>
       </div>
       <div class="form-group justify-content-center row">
-        <label class="col-3" for="imagen"><%= producto.image %></label>
-        <input class="col-7" id="imagen" type="file" name="image" value="" placeholder="">
+        <label class="col-3" for="imagen">Imagen: </label>
+        <input class="col-7" id="imagen" type="file" name="image" value=<%= producto.image %> placeholder="">
     </div>
-    <div class="form-group justify-content-center row">
-         <button type="submit" class="btn btn-primary my-5">Modificar</button>
+    <div class="form-group justify-content-around row">
+        <button type="submit" class="btn btn-primary my-5">Modificar</button>
+      <form action="/product/delete/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+        <button type="submit" class="btn btn-danger my-5">ELIMINAR</button>
+      </form>
     </div>
-    <form action="/product/delete/<%= producto.id %>?_method=DELETE" method="POST" style="display: inline-flex">
-      <button type="submit" class="action-button delete">ELIMINAR</button>
-    </form>  
   </form>
-  
 </div>
 </div>
 

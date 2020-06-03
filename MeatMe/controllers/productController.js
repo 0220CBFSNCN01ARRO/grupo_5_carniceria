@@ -1,50 +1,32 @@
 const fs = require("fs");
 const path = require("path");
-
+const getProduct = require("../middlewares/getProduct");
+const getProductByCategory = require("../middlewares/getProductByCategory");
+const storeProduct = require("../middlewares/storeProduct");
 const productosPath = path.join(__dirname, "../data/productos.json");
-const productosData = JSON.parse(fs.readFileSync(productosPath), "utf-8");
-
-
-let vacuno = productosData.filter(producto => producto.category == "vacuno");
-let cerdo = productosData.filter(producto => producto.category == "cerdo");
-let pollo = productosData.filter(producto => producto.category == "pollo");
-
+const updateProduct = require("../middlewares/updateProduct");
 
 const controller = {
   show: (req, res, next) => {
+    let productosData = getProduct.getProduct();
     res.render("product", { productosData })
   },
-  byCategory: (req, res) => {
-    let categoria = req.params.category;
-    let productos = null;
 
-    if (categoria == "vacuno") {
-      productos = vacuno;
-    }
-    if (categoria == "cerdo") {
-      productos = cerdo;
-    }
-    if (categoria == "pollo") {
-      productos = pollo;
-    }
+  byCategory: (req, res) => {
+    let productos = getProductByCategory.getProductByCategory(req);
+    let categoria = req.params.category;
     if (productos) {
       res.render("productByCategory", { productos, categoria })
-    } else {
-      let error = {
-        message: 'Producto no encontrado',
-        error: {
-          status: 404,
-          stack: ''
-        }
-      }
     }
   },
+
   detail: (req, res) => {
+    let productosData = getProduct.getProduct();
     let id = req.params.id;
     let producto = productosData.find(prod => prod.id == id);
     res.render("productDetail", { producto });
   },
-  
+
   cart: (req, res) => {
     res.render("productCart");
   },
@@ -56,52 +38,30 @@ const controller = {
 
   // Create -  guardar
 	store: (req, res) => {
-		let ids = productosData.map(prod=>prod.id) 
-		let id = Math.max(...ids) + 1 
-
-		req.body.price = Number(req.body.price)
-
-		let productoNuevo = {
-			id:id,
-			... req.body,
-			image: 'default-image.png'
-		}
-		let final = [...productosData,productoNuevo];
-		fs.writeFileSync(productosPath, JSON.stringify(final,null,' '));
-		res.redirect('/product')
+    storeProduct.storeProduct(req);
+		res.redirect('/product');
 	},
 
   // Update - editar
 	edit: (req, res) => {
+    let productosData = getProduct.getProduct();
 		let producto = productosData.find(prod => prod.id == req.params.id);
-    res.render("productEdit", { 
-      producto 
+    res.render("productEdit", {
+      producto
     });
   },
 
   // Update - actualizar
 	update: (req, res) => {
-
-	
-
-		let final = productosData.map(prod => {
-			if(prod.id == req.params.id){
-				return {
-					id: prod.id,
-					...req.body,
-					image: prod.image
-				}
-			} else {
-				return prod
-			}
-		})
-		fs.writeFileSync(productosPath, JSON.stringify(final, null, ' '));
+    updateProduct.updateProduct(req);
 		res.redirect('/')
   },
-  
+
   // Delete -
 	destroy : (req, res) => {
-		let final = productosData.filter(prod=> prod.id != req.params.id)
+    let productosData = getProduct.getProduct();
+    let final = productosData.filter(prod=> prod.id != req.params.id)
+    console.log(final)
 		fs.writeFileSync(productosPath, JSON.stringify(final, null, ' '));
 		res.redirect('/')
 	}
