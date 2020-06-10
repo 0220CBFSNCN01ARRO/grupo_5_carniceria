@@ -1,10 +1,10 @@
 const fs = require("fs");
 const path = require("path");
-const getProduct = require("../middlewares/getProduct");
-const getProductByCategory = require("../middlewares/getProductByCategory");
-const storeProduct = require("../middlewares/storeProduct");
+const getProduct = require("../funciones/getProduct");
+const getProductByCategory = require("../funciones/getProductByCategory");
+const storeProduct = require("../funciones/storeProduct");
 const productosPath = path.join(__dirname, "../data/productos.json");
-const updateProduct = require("../middlewares/updateProduct");
+const updateProduct = require("../funciones/updateProduct");
 
 const controller = {
   show: (req, res, next) => {

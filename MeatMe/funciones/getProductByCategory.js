@@ -1,4 +1,4 @@
-let getProduct = require("../middlewares/getProduct");
+let getProduct = require("./getProduct");
 
 
 module.exports = {
