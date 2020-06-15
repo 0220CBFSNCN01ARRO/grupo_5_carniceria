@@ -1,13 +1,13 @@
 <%- include("partials/header")  %>
 <body>
+    <% if(user) { %> 
     <div class="container">
-        <h1>Bienvenido <%= `${usuario.nombre} ${usuario.apellido}` %> </h1>
-        <p>Su email es: <%= usuario.email %> </p>
-        <img src="/img/avatars/<%= usuario.avatar  %> " alt="<%= `${usuario.nombre} ${usuario.apellido}` %>">
-        <form action="/logout" method="POST">
-            <button type="submit" class="btn btn-primary my-5" >Logout</button>
-        </form>
+        <h1>Bienvenido <%= user.nombre %>  <%= user.apellido %></h1>
+        <p>Su email es: <%= user.email %> </p>
+        <img src="/img/avatars/<%= user.avatar  %> " alt="<%= `${user.nombre} ${user.apellido}` %>">
+         <button type="submit" class="btn btn-primary my-5" ><a href="/users/logout">Logout</a></button>
     </div>
+<% } %> 
 </body>
 
 </html>

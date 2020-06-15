@@ -61,6 +61,7 @@ module.exports = {
         let usuario = getUserByEmail(req.body.email)
         if (usuario != undefined) {
             if (bcrypt.compareSync(req.body.password, usuario.password)) {
+                req.session.user = usuario;
                 res.redirect(`profile/${usuario.id}`)
             } else {
                 res.send('La contraseña no es correcta')
