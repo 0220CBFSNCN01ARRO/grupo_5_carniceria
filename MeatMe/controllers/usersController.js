@@ -1,3 +1,4 @@
+
 const fs = require ('fs');
 const path = require ('path');
 const bcrypt = require ('bcrypt');
@@ -23,12 +24,11 @@ function guardarUsuario (usuario) {
 }
 
 
-
-
 module.exports = {
     register: (req, res) => {
         res.render("register");
     },
+
 
     store: (req, res, next) => {
         req.body.password = bcrypt.hashSync(req.body.password,10);
@@ -41,10 +41,9 @@ module.exports = {
         res.redirect ('/')
 
         //res.send('guardar')
-
-
-
     },
+
+
     admin: (req, res) => {
         res.render("productAdd");
     },

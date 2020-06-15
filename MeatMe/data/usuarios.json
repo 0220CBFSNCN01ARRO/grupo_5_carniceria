@@ -460,5 +460,29 @@
   "localidad": "Rosario",
   "provincia": "SANTA FE",
   "avatar": "avatar-1592245471041.jpg"
+ },
+ {
+  "id": 52,
+  "nombre": "VICTOR",
+  "apellido": "ALAGNA",
+  "email": "victor_alagna@hotmail.com",
+  "password": "$2b$10$lrdmOXg1NR2VZOnz15Va.uST5k6HHfj.uXeFvQTXX0NvCVughbPZC",
+  "repassword": "hola",
+  "direccion": "Pellegrini 2406",
+  "localidad": "Rosario",
+  "provincia": "SANTA FE",
+  "avatar": "avatar-1592246758655.jpg"
+ },
+ {
+  "id": 53,
+  "nombre": "Hugo",
+  "apellido": "Walt",
+  "email": "walt@hotmail.com",
+  "password": "$2b$10$piw47XsWbXVJ7eukxDF1weko3EXkomUi.UDGpbtblVzlcS/7s/fui",
+  "repassword": "gey1",
+  "direccion": "orono",
+  "localidad": "cordoba",
+  "provincia": "cordoba",
+  "avatar": "avatar-1592246819804.jpg"
  }
 ]
