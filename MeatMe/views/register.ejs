@@ -8,7 +8,7 @@
             <p class="text-center mb-0">Una vez registrado podra utilizar nuestro carrito de compras exclusivo para clientes y acceder a las ofertas.</p>
         </div>
     </div>
-<form action="/users/create" method="POST" >
+<form action="/users/create" enctype="multipart/form-data" method="POST" >
     <div class="container-fluid my-5 border-bottom border-dark">
         <div class="form-group justify-content-center row">
             <label for="inputName" class="col-sm-3 col-form-label">Nombre: *</label>
@@ -58,6 +58,10 @@
               <input type="text" class="form-control" id="inputProvincia" name="provincia">
             </div>
           </div>
+          <div class="form-group justify-content-center row">
+            <label for="avatar">Avatar</label>
+            <input id="avatar" type="file" name="avatar" placeholder="">
+        </div>
         <div class="form-group justify-content-center row">
              <button type="submit" class="btn btn-primary my-5">Enviar</button>
         </div>

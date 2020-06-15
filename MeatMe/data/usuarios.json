@@ -591,5 +591,25 @@
   "direccion": "Av. Alberdi",
   "localidad": "Rosario",
   "provincia": "Santa Fe"
+ },
+ {
+  "id": 55,
+  "nombre": "Pedro",
+  "apellido": "Yapur",
+  "email": "pedroy01@hotmail.com",
+  "contraseña": "$2b$10$tG63LFWMk6Yw6iSxzf.fOe9bMi8o5K8nfU4d8FoKb65r.vvglSYS6",
+  "direccion": "richeri 753",
+  "localidad": "rosario",
+  "provincia": "santa fe"
+ },
+ {
+  "id": 56,
+  "nombre": "Pedro",
+  "apellido": "Yapur",
+  "email": "pedroy01@hotmail.com",
+  "contraseña": "$2b$10$e7H92ZE84aGO3un9.dE4HOQWYAON14GII8zZN0d.6VE6qDVzyQnGG",
+  "direccion": "richeri 753",
+  "localidad": "rosario",
+  "provincia": "santa fe"
  }
 ]
