@@ -62,6 +62,10 @@ module.exports = {
         if (usuario != undefined) {
             if (bcrypt.compareSync(req.body.password, usuario.password)) {
                 req.session.user = usuario;
+                if (req.body.remember){
+                    res.cookie('user', usuario, { maxAge: 1000 * 60 * 60 * 24 * 90 });
+                    // req.session.user = req.cookies.user;
+                }
                 res.redirect(`profile/${usuario.id}`)
             } else {
                 res.send('La contraseña no es correcta')
@@ -78,7 +82,7 @@ module.exports = {
     },
     logout: (req, res) => {
         req.session.user = null
-        //res.clearCookie('usuario');
+        res.clearCookie('user');
         res.redirect('/')
     }
 }
