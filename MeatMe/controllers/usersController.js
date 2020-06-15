@@ -17,19 +17,16 @@ function generarID () {
         return 1
     };
 };
-<<<<<<< HEAD
 
 function getUserByEmail(email){
 let usuarios = getUsers();
-usuarios.find = (user => user.email == email)
+usuarios.find(user => user.email == email)
 }
 
-=======
 function getUserById(id) {
     let usuarios = getUsers();
     return usuarios.find(user => user.id == id)
 }
->>>>>>> 6830c649243fd4d1be3daeb1eb4383a3e95669b8
 function guardarUsuario (usuario) {
     let usuarios = getUsers();
     usuarios.push (usuario);
@@ -61,7 +58,7 @@ module.exports = {
     processLogin: (req, res, next) => {
         let usuario = getUserByEmail(req.body.email)
         if (usuario != undefined){
-            if (bcrypt.compareSync(req.body.password, usuario.password)){
+            if (bcrypt.compareSync(req.body.password,usuario.password)){
                 res.redirect (`profile/${usuario.id}`)
             }else{
                 res.send('La contraseña no es correcta')
@@ -70,19 +67,15 @@ module.exports = {
             res.send ("No existe usuario con ese Email")
         }
 
-        res.send('verificado')
 
     },
-<<<<<<< HEAD
-=======
     profile: (req, res) => {
         let usuario = getUserById(req.params.id)
         res.render('profile', {usuario});
-    },    
+    },
     logout: (req, res) => {
         req.session.user = null
         //res.clearCookie('usuario');
         res.redirect('/')
     }
->>>>>>> 6830c649243fd4d1be3daeb1eb4383a3e95669b8
 }

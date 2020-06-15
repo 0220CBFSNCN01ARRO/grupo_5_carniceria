@@ -1,5 +1,4 @@
 [
-
  {
   "id": 1,
   "nombre": "VICTOR",
@@ -11,8 +10,8 @@
   "localidad": "Rosario",
   "provincia": "SANTA FE",
   "avatar": "avatar-1592252335842.jpg"
-},
-{
+ },
+ {
   "id": 2,
   "nombre": "Pedro",
   "apellido": "Yapur",
@@ -23,5 +22,17 @@
   "localidad": "rosario",
   "provincia": "santa fe",
   "avatar": "avatar-1592251579581.jpg"
+ },
+ {
+  "id": 3,
+  "nombre": "VICTOR",
+  "apellido": "ALAGNA",
+  "email": "victor_alagna@hotmail.com",
+  "password": "$2b$10$5TfkCuPaIUUPe23vBCd3YOyoSnaDqTuO.JAqChnfvo6Nn0LN8DzG.",
+  "repassword": "holi",
+  "direccion": "Pellegrini 2406",
+  "localidad": "Rosario",
+  "provincia": "SANTA FE",
+  "avatar": "avatar-1592254240815.jpg"
  }
 ]

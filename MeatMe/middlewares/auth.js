@@ -8,6 +8,6 @@ module.exports = (req,res, next) => {
         req.session.user = req.cookies.usuario;
         res.locals.user = req.cookies.usuario;
 
-    } 
+    }
     next();
 };
