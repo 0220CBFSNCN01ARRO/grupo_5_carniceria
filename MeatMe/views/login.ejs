@@ -1,22 +1,22 @@
 <%- include("partials/header")  %>
 <div class="container my-5">
-    <div class="row text-center border-top border-bottom border-dark">
-        <form action="" method="post"></form>
+    <div class="row text-center border-top border-bottom border-dark justify-content-center">
+        <form action="/users/login" method="POST" class="container">
             <div class="col-12">
-               <h1>Login</h1>
+               <h1>LOGIN</h1>
             </div>
             <div class="col-12 mt-3">
-               <label for="usuario">Usuario</label>
-               <input class="form-control w-50 mx-auto" type="text" name="usuario" id="usuario">
+               <label for="email">Email</label>
+               <input class="form-control w-50 mx-auto" type="email" name="email" id="email">
             </div>
             <div class="col-12 mb-2">
                 <label for="password">Contraseña</label>
                 <input class="form-control w-50 mx-auto" type="password" name="password" id="password">
             </div>
-            <div class="col-6 text-right">
-                <a href="#" >Olvide mi Contraseña</a>
+            <div class="col-12">
+                <a href="#" >Olvide mi contraseña</a>
             </div>
-            <div class="col-6 text-left">
+            <div class="col-12 ">
                 <a href="/users/register">Crear usuario nuevo</a>
             </div>
             <div class="col-12 text-center">

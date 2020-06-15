@@ -484,5 +484,17 @@
   "localidad": "cordoba",
   "provincia": "cordoba",
   "avatar": "avatar-1592246819804.jpg"
+ },
+ {
+  "id": 54,
+  "nombre": "VICTOR",
+  "apellido": "ALAGNA",
+  "email": "victor@alagnapropiedades.com.ar",
+  "password": "$2b$10$RI7HxjD4ZIVvRQWbtIwuA.edqhLRrCl8hfw0Y4bHqKlyggj7CjHAy",
+  "repassword": "hola111",
+  "direccion": "Pellegrini 2406",
+  "localidad": "Rosario",
+  "provincia": "SANTA FE",
+  "avatar": "avatar-1592252335842.jpg"
  }
 ]
