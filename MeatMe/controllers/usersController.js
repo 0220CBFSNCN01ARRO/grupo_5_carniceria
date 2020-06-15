@@ -1,35 +1,35 @@
 
-const fs = require ('fs');
-const path = require ('path');
-const bcrypt = require ('bcrypt');
+const fs = require('fs');
+const path = require('path');
+const bcrypt = require('bcrypt');
 let usersPath = path.join(__dirname, '../data/usuarios.json');
 
-function getUsers (){
-    let userContent= fs.readFileSync (usersPath, 'utf-8')
-    return userContent != '' ? JSON.parse (userContent) : []
+function getUsers() {
+    let userContent = fs.readFileSync(usersPath, 'utf-8')
+    return userContent != '' ? JSON.parse(userContent) : []
 }
-function generarID () {
-    let usuarios= getUsers();
-    if (usuarios.length){
+function generarID() {
+    let usuarios = getUsers();
+    if (usuarios.length) {
         let ids = usuarios.map((user) => user.id);
-        return Math.max (...ids) + 1;
-    } else{
+        return Math.max(...ids) + 1;
+    } else {
         return 1
     };
 };
 
-function getUserByEmail(email){
-let usuarios = getUsers();
-usuarios.find(user => user.email == email)
+function getUserByEmail(email) {
+    let usuarios = getUsers();
+    usuarios.find(user => user.email == email)
 }
 
 function getUserById(id) {
     let usuarios = getUsers();
     return usuarios.find(user => user.id == id)
 }
-function guardarUsuario (usuario) {
+function guardarUsuario(usuario) {
     let usuarios = getUsers();
-    usuarios.push (usuario);
+    usuarios.push(usuario);
     fs.writeFileSync(usersPath, JSON.stringify(usuarios, null, " "));
 }
 
@@ -38,14 +38,14 @@ module.exports = {
         res.render("register");
     },
     store: (req, res, next) => {
-        req.body.password = bcrypt.hashSync(req.body.password,10);
-        let usuarioNuevo= {
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
+        let usuarioNuevo = {
             id: generarID(),
             ...req.body,
             avatar: req.files[0].filename
         }
-        guardarUsuario (usuarioNuevo);
-        res.redirect ('/')
+        guardarUsuario(usuarioNuevo);
+        res.redirect('/')
     },
     admin: (req, res) => {
         res.render("productAdd");
@@ -57,21 +57,21 @@ module.exports = {
 
     processLogin: (req, res, next) => {
         let usuario = getUserByEmail(req.body.email)
-        if (usuario != undefined){
-            if (bcrypt.compareSync(req.body.password,usuario.password)){
-                res.redirect (`profile/${usuario.id}`)
-            }else{
+        if (usuario != undefined) {
+            if (bcrypt.compareSync(req.body.password, usuario.password)) {
+                res.redirect(`profile/${usuario.id}`)
+            } else {
                 res.send('La contraseña no es correcta')
             }
-        }else{
-            res.send ("No existe usuario con ese Email")
+        } else {
+            res.send("No existe usuario con ese Email")
         }
 
 
     },
     profile: (req, res) => {
         let usuario = getUserById(req.params.id)
-        res.render('profile', {usuario});
+        res.render('profile', { usuario });
     },
     logout: (req, res) => {
         req.session.user = null
