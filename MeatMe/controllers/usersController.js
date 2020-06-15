@@ -21,6 +21,8 @@ function generarID() {
 function getUserByEmail(email) {
     let usuarios = getUsers();
     usuarios.find(user => user.email == email)
+    return usuarios.find(user=>user.email == email)
+
 }
 
 function getUserById(id) {
