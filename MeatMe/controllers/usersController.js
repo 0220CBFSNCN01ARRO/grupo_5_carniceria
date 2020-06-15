@@ -17,12 +17,19 @@ function generarID () {
         return 1
     };
 };
+<<<<<<< HEAD
 
 function getUserByEmail(email){
 let usuarios = getUsers();
 usuarios.find = (user => user.email == email)
 }
 
+=======
+function getUserById(id) {
+    let usuarios = getUsers();
+    return usuarios.find(user => user.id == id)
+}
+>>>>>>> 6830c649243fd4d1be3daeb1eb4383a3e95669b8
 function guardarUsuario (usuario) {
     let usuarios = getUsers();
     usuarios.push (usuario);
@@ -33,8 +40,6 @@ module.exports = {
     register: (req, res) => {
         res.render("register");
     },
-
-
     store: (req, res, next) => {
         req.body.password = bcrypt.hashSync(req.body.password,10);
         let usuarioNuevo= {
@@ -45,8 +50,6 @@ module.exports = {
         guardarUsuario (usuarioNuevo);
         res.redirect ('/')
     },
-
-
     admin: (req, res) => {
         res.render("productAdd");
     },
@@ -70,4 +73,16 @@ module.exports = {
         res.send('verificado')
 
     },
+<<<<<<< HEAD
+=======
+    profile: (req, res) => {
+        let usuario = getUserById(req.params.id)
+        res.render('profile', {usuario});
+    },    
+    logout: (req, res) => {
+        req.session.user = null
+        //res.clearCookie('usuario');
+        res.redirect('/')
+    }
+>>>>>>> 6830c649243fd4d1be3daeb1eb4383a3e95669b8
 }
