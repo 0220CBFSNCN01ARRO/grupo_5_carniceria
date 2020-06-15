@@ -22,5 +22,17 @@
   "localidad": "rosario",
   "provincia": "santa fe",
   "avatar": "avatar-1592250214617.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": "Pedro",
+  "apellido": "Yapur",
+  "email": "pedroy01@hotmail.com",
+  "password": "$2b$10$RTNRR.yeUnmnO6fwTzgZTOQDQpIUABukzcUENH74S6ynZU8Hnvx5K",
+  "repassword": "123456",
+  "direccion": "richeri 753",
+  "localidad": "rosario",
+  "provincia": "santa fe",
+  "avatar": "avatar-1592251579581.jpg"
  }
 ]

@@ -5,6 +5,9 @@ const multer = require('multer');
 const path = require('path');
 const bcrypt = require('bcrypt');
 
+const userRoute = require('../middlewares/userRoute');
+const guestRoute = require('../middlewares/guestRoute');
+
 var storage = multer.diskStorage({
       destination: (req, file, cb) => {
             cb(null, path.join(__dirname,'../public/img/avatars'))
@@ -18,7 +21,7 @@ var storage = multer.diskStorage({
 
 /* GET users listing. */
 router.get('/register', controllers.register);
-router.post('/register',upload.any(), controllers.store);
+router.post('/register', upload.any(), controllers.store);
 router.get('/admin', controllers.admin);
 router.get('/login', controllers.login);
 router.post('/login', controllers.processLogin);
