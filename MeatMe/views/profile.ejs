@@ -1,0 +1,16 @@
+<%- include("partials/header")  %>
+<body>
+    <div class="container">
+        <h1>Bienvenido <%= `${usuario.nombre} ${usuario.apellido}` %> </h1>
+        <p>Su email es: <%= usuario.email %> </p>
+        <img src="../../public/img/avatars<%= usuario.avatar  %> " alt="<%= `${usuario.nombre} ${usuario.apellido}` %>">
+        <form action="/logout" method="POST">
+            <button type="submit" class="btn btn-primary my-5" >Logout</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+<%- include("partials/footer") %>
+

@@ -17,6 +17,10 @@ function generarID () {
         return 1
     };
 };
+function getUserById(id) {
+    let usuarios = getUsers();
+    return usuarios.find(user => user.id == id)
+}
 function guardarUsuario (usuario) {
     let usuarios = getUsers();
     usuarios.push (usuario);
@@ -28,8 +32,6 @@ module.exports = {
     register: (req, res) => {
         res.render("register");
     },
-
-
     store: (req, res, next) => {
         req.body.password = bcrypt.hashSync(req.body.password,10);
         let usuarioNuevo= {
@@ -39,11 +41,7 @@ module.exports = {
         }
         guardarUsuario (usuarioNuevo);
         res.redirect ('/')
-
-        //res.send('guardar')
     },
-
-
     admin: (req, res) => {
         res.render("productAdd");
     },
@@ -53,5 +51,14 @@ module.exports = {
     processLogin: (req, res, next) => {
         res.send('verificado')
 
+    },
+    profile: (req, res) => {
+        let usuario = getUserById(req.params.id)
+        res.render('profile', {usuario});
+    },    
+    logout: (req, res) => {
+        req.session.user = null
+        //res.clearCookie('usuario');
+        res.redirect('/')
     }
 }
