@@ -49,15 +49,21 @@
                       <li class="nav-item">
                         <a class="nav-link" href="#">CONTACTOS</a>
                       </li>
+                      <% if(user) { %>
                       <li class="nav-item">
                         <a class="nav-link" href="/product/cart"><i class="fas fa-shopping-cart"></i></a>
                       </li>
+                      <% } else { %>
+                    <% } %>
+                    <% if(user) { %>
+                      <% } else { %>
                       <li class="nav-item">
                         <a class="nav-link" href="/users/register">REGISTRARSE</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="/users/login">LOGIN</a>
                       </li>
+                    <% } %>
                     </ul>
                     <!-- Links -->
                 
