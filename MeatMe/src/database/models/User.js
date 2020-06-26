@@ -33,6 +33,6 @@ module.exports = (sequelize, DataTypes) => {
         })
     }
     
-    return Product;
+    return User;
 
 };
