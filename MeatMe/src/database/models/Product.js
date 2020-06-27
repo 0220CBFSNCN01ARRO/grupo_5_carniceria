@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     const config = {
-        tableName : 'product',
+        tableName : 'products',
         timestamps: false
     }
 
@@ -19,13 +19,13 @@ module.exports = (sequelize, DataTypes) => {
     Product.associate = function(models) {
         Product.belongsTo(models.Items,{
             as: 'item',
-            foreignKey: 'product_id'
+            foreignKey: 'products_id'
         });
         Product.belongsToMany(models.Users,{
             as: 'users',
             through: 'user_product',
-            foreignKey: 'product_id',
-            otherKey: 'user_id',
+            foreignKey: 'products_id',
+            otherKey: 'users_id',
             timestamps: false
         })
     }

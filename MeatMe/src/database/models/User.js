@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     const config = {
-        tableName : 'user',
+        tableName : 'users',
         timestamps: false
     }
 
@@ -22,13 +22,13 @@ module.exports = (sequelize, DataTypes) => {
     User.associate = function(models) {
         User.belongsTo(models.Orders,{
             as: 'order',
-            foreignKey: 'user_id'
+            foreignKey: 'users_id'
         });
         User.belongsToMany(models.Products,{
             as: 'products',
             through: 'user_product',
-            foreignKey: 'user_id',
-            otherKey: 'product_id',
+            foreignKey: 'users_id',
+            otherKey: 'products_id',
             timestamps: false
         })
     }
