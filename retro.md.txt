@@ -15,4 +15,12 @@ ___
 - En cuanto a los positivo creo que tenemos una buena comunicacion, estamos en contacto mediante whatsapp cada 2 o 3 dias nos comunicamos para ver como vamos con el proyecto y tambien como vamos avanzando en la cursada. Tambien hacemos videosllamdas por zoom para trabajar juntos cuando ya tenemos mas o menos armado lo que hizo cada uno, como para ver los detalles.
 - En cuanto a lo negativo tuvimos problemas con GIT pero nada que no se solucione, solo falta de practica, y problemas con el tiempo por el tema de que cada uno tiene su trabajo y mas lo de la cursada, por ahi no se llega bien con el tiempo.
 ##
+
+
+#SPRINT 2
+___
+## Conclusiones:
+
+En el sprint anterior nos resulto un tanto dificil repartirnos las tareas pero lo resolvimos juntandonos para ver juntos todo el material y en mejor detalle, ademas mantenemos una comunicacion constante por whatsapp y si es necesario hacemos reuniones por zoom.
  
+##
