@@ -1,11 +1,11 @@
 module.exports = (sequelize, DataTypes) => {
 
     const cols = {
-        product_id: DataTypes.INTEGER,
+        products_id: DataTypes.INTEGER,
         quantity: DataTypes.INTEGER,
         price: DataTypes.DECIMAL,
-        order_id: DataTypes.INTEGER,
-        name: DataTypes.VARCHAR
+        orders_id: DataTypes.INTEGER,
+        name: DataTypes.STRING
     }
 
     const config = {
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
             as: 'order',
             foreignKey: 'orders_id'
         });
-        Product.belongsTo(models.Products,{
+        Item.belongsTo(models.Products,{
             as: 'products',
             foreignKey: 'products_id',
             timestamps: false

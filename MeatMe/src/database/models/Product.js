@@ -1,12 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
 
     const cols = {
-        name: DataTypes.VARCHAR,
+        name: DataTypes.STRING,
         category_id: DataTypes.INTEGER,
         price: DataTypes.DECIMAL,
-        type: DataTypes.VARCHAR,
+        type: DataTypes.STRING,
         weight: DataTypes.DECIMAL,
-        image: DataTypes.VARCHAR
+        image: DataTypes.STRING
     }
 
     const config = {
@@ -17,9 +17,10 @@ module.exports = (sequelize, DataTypes) => {
     const Product = sequelize.define('Products',cols,config);
 
     Product.associate = function(models) {
-        Product.belongsTo(models.Items,{
+        Product.hasOne(models.Items,{
             as: 'item',
             foreignKey: 'products_id'
+
         });
         Product.belongsToMany(models.Users,{
             as: 'users',
@@ -27,7 +28,11 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'products_id',
             otherKey: 'users_id',
             timestamps: false
-        })
+        });
+        Product.belongsTo(models.Categorys,{
+            as: 'category',
+            foreignKey: 'category_id'
+        });
     }
     
     return Product;

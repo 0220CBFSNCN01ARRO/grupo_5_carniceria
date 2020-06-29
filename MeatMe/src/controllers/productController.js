@@ -1,30 +1,51 @@
 const fs = require("fs");
 const path = require("path");
-const getProduct = require("../funciones/getProduct");
-const getProductByCategory = require("../funciones/getProductByCategory");
-const storeProduct = require("../funciones/storeProduct");
-const productosPath = path.join(__dirname, "../data/productos.json");
-const updateProduct = require("../funciones/updateProduct");
+// const getProduct = require("../funciones/getProduct");
+// const getProductByCategory = require("../funciones/getProductByCategory");
+// const storeProduct = require("../funciones/storeProduct");
+// const productosPath = path.join(__dirname, "../data/productos.json");
+// const updateProduct = require("../funciones/updateProduct");
+const db = require('../database/models');
+// const { Association } = require("sequelize/types");
 
 const controller = {
-  show: (req, res, next) => {
-    let productosData = getProduct.getProduct();
-    res.render("product", { productosData })
+  show: async (req, res, next) => {
+    const category = await db.Categorys.findAll()
+
+      const product = await db.Products.findAll ()
+        res.render ("product", {product, category});
   },
 
-  byCategory: (req, res) => {
-    let productos = getProductByCategory.getProductByCategory(req);
-    let categoria = req.params.category;
-    if (productos) {
-      res.render("productByCategory", { productos, categoria })
+  byCategory: async (req, res) => {
+    const category = await db.Categorys.findAll({
+    where:{
+      id: req.params.category
     }
-  },
+    });
+    const product = await db.Products.findAll ({
+      where: {
+        category_id: req.params.category
+      }})
+      if (product){
+    res.render("productByCategory", { product, category })
+    }else {
+      res.render('error');
+  }
 
-  detail: (req, res) => {
-    let productosData = getProduct.getProduct();
-    let id = req.params.id;
-    let producto = productosData.find(prod => prod.id == id);
-    res.render("productDetail", { producto });
+  },
+//  por que tenemos detail???
+  detail: async (req, res) => {
+    const category = await db.Categorys.findAll({
+      where:{
+        id: req.params.category
+      }
+      });
+      const product = await db.Products.findAll ({
+        where: {
+          id: req.params.id
+        }})
+
+        res.render ("productDetail", {product, category});
   },
 
   cart: (req, res) => {
@@ -33,38 +54,81 @@ const controller = {
 
   // Create - crear
   create: (req, res) => {
-    res.render('productAdd');
+    db.Products.findAll()
+            .then(product => {
+                res.render('productAdd', { product });
+            })
+            .catch(error => console.log(error));
   },
 
   // Create -  guardar
 	store: (req, res) => {
-    storeProduct.storeProduct(req);
-		res.redirect('/product');
+    product = req.body;
+        product.image = req.file ? req.file.filename : '';
+
+        db.Products
+            .create(product)
+            .then(storedProduct => {
+                //storedProduct.addTags(req.body.keywords.split(' '))
+                return res.redirect(`/product/${storedProduct.id}`)
+            })
+            .catch(error => { console.log(error) });
+
 	},
 
   // Update - editar
 	edit: (req, res) => {
-    let productosData = getProduct.getProduct();
-		let producto = productosData.find(prod => prod.id == req.params.id);
-    res.render("productEdit", {
-      producto
-    });
+      db.Products.findByPk(req.params.id,{include:['category']})
+      .then (Products =>{
+        res.render("productEdit", {Products})
+      })
+
+
   },
 
   // Update - actualizar
 	update: (req, res) => {
-    updateProduct.updateProduct(req);
-		res.redirect('/')
+    product = req.body;
+
+    product.image = req.params.image ? req.body.image : req.body.oldImage;
+    delete product.oldImage;
+
+    // product.keywords = product.keywords.split(' ');
+
+    db.product
+        .update(product, {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(updatedProduct => {
+            // Guardar tags
+            // updatedProduct.addTags()
+            res.redirect(`/product/${req.params.id}`)
+        })
+        .catch(error => { console.log(error) })
   },
 
   // Delete -
 	destroy : (req, res) => {
-    let productosData = getProduct.getProduct();
-    let final = productosData.filter(prod=> prod.id != req.params.id)
-    console.log(final)
-		fs.writeFileSync(productosPath, JSON.stringify(final, null, ' '));
-		res.redirect('/')
-	}
+    db.product
+            .findByPk(req.params.id)
+            // Si el registro existe
+            .then(async product => {
+                // Lo borramos
+                await db.product.destroy({ where: { id: req.params.id } });
+
+                // y además borramos la imagen asociada
+                const imagePath = path.resolve(__dirname, '../../public/images/products', product.image);
+                if (fs.existsSync(imagePath)) {
+                    fs.unlinkSync(imagePath);
+                }
+
+                // luego volvemos al listado
+                res.redirect(`/product/`)
+            })
+            .catch(error => console.log(error));
+    }
 
 };
 

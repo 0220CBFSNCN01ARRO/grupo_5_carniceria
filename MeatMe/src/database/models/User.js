@@ -1,14 +1,14 @@
 module.exports = (sequelize, DataTypes) => {
 
     const cols = {
-        fist_name: DataTypes.VARCHAR,
-        last_name: DataTypes.VARCHAR,
-        email: DataTypes.VARCHAR,
-        password: DataTypes.VARCHAR,
-        address: DataTypes.VARCHAR,
-        city: DataTypes.VARCHAR,
-        state: DataTypes.VARCHAR,
-        avatar: DataTypes.VARCHAR,
+        fist_name: DataTypes.STRING,
+        last_name: DataTypes.STRING,
+        email: DataTypes.STRING,
+        password: DataTypes.STRING,
+        address: DataTypes.STRING,
+        city: DataTypes.STRING,
+        state: DataTypes.STRING,
+        avatar: DataTypes.STRING,
         status: DataTypes.INTEGER
     }
 

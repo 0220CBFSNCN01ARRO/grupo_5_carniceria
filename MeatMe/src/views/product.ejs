@@ -1,12 +1,12 @@
 <%- include("partials/header")  %>
 <div class="row row-cols-1 row-cols-md-4 mx-auto justify-content-between">
-    <% for ( producto of productosData) { %> 
+    <% for ( producto of product) { %> 
     <div class="col mb-4">
         <div class="card">
-            <a href="/product/<%= producto.category %>/detail/<%= producto.id %>"><img src="/img/<%= producto.image %> " class="card-img-top" alt="Vacio"></a>
+            <a href="/product/<%= producto.category_id %>/detail/<%= producto.id %>"><img src="/img/<%= producto.image %>" class="card-img-top" alt="Vacio"></a>
             <div class="card-body">
                 <h5 class="card-title"><%= producto.name %> </h5>
-                <p class="card-text"><%= producto.name %> de <%= producto.category %></p>
+                <p class="card-text"><%= producto.name %> de <%= category.name %></p>
             </div>
             <a class="btn btn-primary" href="/product/cart" role="button">Agregar al carrito</a>
         </div>

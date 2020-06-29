@@ -4,10 +4,15 @@ let sequelize = db.sequelize;
 
 module.exports = {
     index: (req, res) => {
-        // sequelize.query("SELECT * FROM movies")
+        db.Categorys.findAll()
+        .then(category =>
+            res.render("index", {category}))
+       
+            // sequelize.query("SELECT * FROM movies")
         // .then( respuesta => {
         // res.send(respuesta)
         // });
-        res.render("index");
-    }
-}
+
+    },
+
+};
