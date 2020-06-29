@@ -6,7 +6,12 @@
             <a href="/product/<%= producto.category_id %>/detail/<%= producto.id %>"><img src="/img/<%= producto.image %>" class="card-img-top" alt="Vacio"></a>
             <div class="card-body">
                 <h5 class="card-title"><%= producto.name %> </h5>
-                <p class="card-text"><%= producto.name %> de <%= category.name %></p>
+            <p class="card-text"><%= producto.name %> de <% for(categoria of category) { %> 
+            <% if(categoria.id == producto.category_id) { %>
+            <%= categoria.name %> 
+                <% } %> 
+                <% } %> 
+            </p>
             </div>
             <a class="btn btn-primary" href="/product/cart" role="button">Agregar al carrito</a>
         </div>
