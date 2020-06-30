@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
+const db = require('../database/models');
 let usersPath = path.join(__dirname, '../data/usuarios.json');
 
 function getUsers() {

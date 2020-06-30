@@ -88,25 +88,18 @@ const controller = {
 
   // Update - actualizar
 	update: (req, res) => {
-    product = req.body;
+    let _product = req.body;
 
-    product.image = req.params.image ? req.body.image : req.body.oldImage;
-    delete product.oldImage;
+    _product.image = req.params.image ? req.body.image : req.body.oldImage;
+    delete _product.oldImage;
 
-    // product.keywords = product.keywords.split(' ');
-
-    db.product
-        .update(product, {
-            where: {
-                id: req.params.id
-            }
+    db.Products.update(_product, {
+            where: {id: req.params.id}
         })
-        .then(updatedProduct => {
-            // Guardar tags
-            // updatedProduct.addTags()
-            res.redirect(`/product/${req.params.id}`)
-        })
-        .catch(error => { console.log(error) })
+        .then(() => res.redirect(`/product/${req.params.id}`)
+        .catch(error => { console.log(error) })  
+      )
+        
   },
 
   // Delete -
