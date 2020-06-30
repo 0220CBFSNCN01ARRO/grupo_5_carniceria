@@ -88,12 +88,10 @@ const controller = {
 
   // Update - actualizar
 	update: (req, res) => {
-    let _product = req.body;
 
-    _product.image = req.params.image ? req.body.image : req.body.oldImage;
-    delete _product.oldImage;
+    req.body.image = req.files[0] ? req.files[0].filename : " ";
 
-    db.Products.update(_product, {
+    db.Products.update(req.body, {
             where: {id: req.params.id}
         })
         .then(() => res.redirect(`/product/${req.params.id}`)
