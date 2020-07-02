@@ -7,12 +7,6 @@ module.exports = {
         db.Categorys.findAll()
         .then(category =>
             res.render("index", {category}))
-       
-            // sequelize.query("SELECT * FROM movies")
-        // .then( respuesta => {
-        // res.send(respuesta)
-        // });
-
     },
 
 };

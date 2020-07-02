@@ -1,48 +1,58 @@
 <%- include("partials/header")  %>
 <div class="container">
-    <div class="encabezado-formulario mb-5" class="row">
-        <div class="col-12 d-flex justify-content-center border-top border-dark pt-3 my-5">
-            <h1 class="text-uppercase">Formulario de carga de Producto</h1>
-        </div>
-        <div class="alert alert-primary" role="alert" class="col-12 d-flex justify-content-center">
-            <p class="text-center mb-0">Una vez completados los casillero, hacer click en "agregar" para que se incorpore el producto.</p>
-        </div>
-    </div>
-<div class="container-fluid my-5 border-bottom border-dark">
+    
+<div class="container-fluid my-5">
   <form action="/product/create" method="POST" enctype="multipart/form-data" >
+    <div class="encabezado-formulario mb-5" class="row">
+      <div class="col-12 d-flex justify-content-center border-top border-dark pt-3 my-5">
+          <h1 class="text-uppercase">Formulario de carga de Producto</h1>
+      </div>
+      <div class="alert alert-primary" role="alert" class="col-12 d-flex justify-content-center">
+          <p class="text-center mb-0">Una vez completados los casillero, hacer click en "agregar" para que se incorpore el producto.</p>
+      </div>
+  </div>
     <div class="form-group justify-content-center row">
-        <label for="inputTipoProducto" class="col-sm-3 col-form-label">Tipo de Producto: *</label>
+        <label for="inputTipoProducto" class="col-sm-3 col-form-label">Categoria: *</label>
         <div class="col-sm-7">
-          <input type="text" class="form-control" id="inputTipoProducto" name="category" value="" required>
+          <select name="category" id="inputTipoProducto" class="form-control">
+            <option selected disabled>Seleccione una categoria</option>
+            <% for(category of categorys) { %> 
+            <option value="<%= category.id %>"><%= category.name %></option>
+            <% } %> 
+          </select>
         </div>
       </div>
       <div class="form-group justify-content-center row">
         <label for="inputNombreProducto" class="col-sm-3 col-form-label">Nombre del Producto: *</label>
         <div class="col-sm-7">
-          <input type="text" class="form-control" id="inputNombreProducto" name="name" value="" required>
+          <input type="text" class="form-control" id="inputNombreProducto" name="name"  required>
         </div>
       </div>
       <div class="form-group justify-content-center row">
         <label for="inputKg/Unidad" class="col-sm-3 col-form-label">Kg o Unidad: *</label>
         <div class="col-sm-7">
-          <input type="text" class="form-control" id="inputKg/Unidad" name="type" value="" required>
+          <select name="category" id="inputTipoProducto" class="form-control">
+            <option disabled selected>Seleccione una opcion</option>
+            <option value="Kg">Kg</option>
+            <option value="Unidad">Unidad</option>
+          </select>
         </div>
       </div>
     <div class="form-group justify-content-center row">
-        <label for="inputKgPorUnidad" class="col-sm-3 col-form-label">Kg por Unidad: </label>
+        <label for="inputKgPorUnidad" class="col-sm-3 col-form-label">Peso / Cantidad: </label>
         <div class="col-sm-7">
-          <input type="number" class="form-control" id="inputKgPorUnidad" name="weight" value="" placeholder="Completar Kg por unidad solo si el producto se vende por unidad">
+          <input type="number" class="form-control" id="inputKgPorUnidad" name="weight" value="1" placeholder="Completar Kg por unidad solo si el producto se vende por unidad">
         </div>
       </div>
     <div class="form-group justify-content-center row">
         <label for="inputPrecioPorKg" class="col-sm-3 col-form-label">Precio por Kg: *</label>
         <div class="col-sm-7">
-          <input type="number" class="form-control" id="inputPrecioPorKg" name="price" value="" required>
+          <input type="number" class="form-control" id="inputPrecioPorKg" name="price"  required>
         </div>
       </div>
       <div class="form-group justify-content-center row">
         <label class="col-3" for="imagen">Imagen: </label>
-        <input class="col-7" id="imagen" type="file" name="image" value="" placeholder="">
+        <input class="col-7" id="imagen" type="file" name="image"  placeholder="">
     </div>
     <div class="form-group justify-content-center row">
          <button type="submit" class="btn btn-primary my-5">Agregar</button>

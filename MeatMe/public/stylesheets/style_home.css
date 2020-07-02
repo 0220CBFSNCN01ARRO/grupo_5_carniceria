@@ -64,3 +64,15 @@ footer, footer li{
     max-width: 75%;
     max-height: 75%;
 }
+.page-footer{
+    width: 100%;
+}
+
+form, .cart-table {
+  box-shadow: 0px 10px 5px rgb(124, 124, 124);
+
+}
+
+.btn-outline-light:hover {
+    background-color: #4285F4;
+}

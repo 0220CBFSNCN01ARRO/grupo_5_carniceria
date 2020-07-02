@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
 
     const cols = {
         items_id: DataTypes.INTEGER,
-        user_id: DataTypes.INTEGER,
+        users_id: DataTypes.INTEGER,
     }
 
     const config = {

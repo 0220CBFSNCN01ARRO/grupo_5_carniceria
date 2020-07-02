@@ -75,11 +75,17 @@
                 <% if(user) { %> 
                 <div class="row">
                   <div class="col-8">
-                    <h5>Bienvenido  <%= user.nombre %>  <%= user.apellido %> </h5>
+                    <h5>Bienvenido  <%= user.first_name %>  <%= user.last_name %> </h5>
                   </div>
+                <% if(user.status == 2) { %> 
                   <div class="col-4 d-flex justify-content-end">
-                    <button class="btn btn-primary" role="button"><a href="/users/profile/<%= user.id %>">MI PERFIL</a></button>
+                    <button class="btn btn-primary" role="button"><a href="/users/admin/<%= user.id %>">MI PERFIL</a></button>
                   </div>
+                  <% } else { %>
+                    <div class="col-4 d-flex justify-content-end">
+                      <button class="btn btn-primary" role="button"><a href="/users/profile/<%= user.id %>">MI PERFIL</a></button>
+                    </div>
+                    <% } %> 
                  </div>
                 <% } %> 
                     <!-- imagen slider -->

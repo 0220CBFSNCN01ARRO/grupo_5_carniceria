@@ -1,12 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-// const getProduct = require("../funciones/getProduct");
-// const getProductByCategory = require("../funciones/getProductByCategory");
-// const storeProduct = require("../funciones/storeProduct");
-// const productosPath = path.join(__dirname, "../data/productos.json");
-// const updateProduct = require("../funciones/updateProduct");
+
 const db = require('../database/models');
-// const { Association } = require("sequelize/types");
 
 const controller = {
   show: async (req, res, next) => {
@@ -51,69 +46,74 @@ const controller = {
   cart: (req, res) => {
     res.render("productCart");
   },
+ 
+  cartAdd: async (req,res,next) => {
+    const product = await db.Products.findByPk(req.params.id)
+    const categorys = await db.Categorys.findByPk(req.params.category)
+    req.session.cart.push({ product,categorys});
+    res.locals.cart = req.session.cart;
+    // console.log(req.session.cart.product.name)
+    res.redirect("/product")
+  },
 
   // Create - crear
-  create: (req, res) => {
-    db.Products.findAll()
-            .then(product => {
-                res.render('productAdd', { product });
-            })
-            .catch(error => console.log(error));
+  create: async (req, res) => {
+    const product = await db.Products.findAll()
+    const categorys = await db.Categorys.findAll()
+      res.render('productAdd', { product, categorys });
   },
 
   // Create -  guardar
 	store: (req, res) => {
     product = req.body;
-        product.image = req.file ? req.file.filename : '';
+        product.image = req.files ? req.files[0].filename : '';
 
         db.Products
             .create(product)
             .then(storedProduct => {
                 //storedProduct.addTags(req.body.keywords.split(' '))
-                return res.redirect(`/product/${storedProduct.id}`)
+                return res.redirect(`/product`)
             })
             .catch(error => { console.log(error) });
 
 	},
 
   // Update - editar
-	edit: (req, res) => {
-      db.Products.findByPk(req.params.id,{include:['category']})
-      .then (Products =>{
-        res.render("productEdit", {Products})
-      })
+	edit: async (req, res) => {
+     const Products = await db.Products.findByPk(req.params.id)
+     const categorys = await db.Categorys.findAll()
+       res.render("productEdit", {Products, categorys})
 
 
   },
 
   // Update - actualizar
 	update: (req, res) => {
-
     req.body.image = req.files[0] ? req.files[0].filename : " ";
 
     db.Products.update(req.body, {
             where: {id: req.params.id}
         })
-        .then(() => res.redirect(`/product/${req.params.id}`)
+        .then(() => res.redirect(`/product`)
         .catch(error => { console.log(error) })  
       )
-        
   },
 
   // Delete -
 	destroy : (req, res) => {
-    db.product
+    db.Products
             .findByPk(req.params.id)
             // Si el registro existe
             .then(async product => {
+            console.log(product)
                 // Lo borramos
-                await db.product.destroy({ where: { id: req.params.id } });
+                await db.Products.destroy({ where: { id: req.params.id } });
 
                 // y además borramos la imagen asociada
-                const imagePath = path.resolve(__dirname, '../../public/images/products', product.image);
-                if (fs.existsSync(imagePath)) {
-                    fs.unlinkSync(imagePath);
-                }
+                // const imagePath = path.resolve(__dirname, '../../public/images/products', product.image);
+                // if (fs.existsSync(imagePath)) {
+                //     fs.unlinkSync(imagePath);
+                // }
 
                 // luego volvemos al listado
                 res.redirect(`/product/`)

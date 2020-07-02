@@ -3,7 +3,7 @@
     <% for ( producto of product) { %> 
     <div class="col mb-4">
         <div class="card">
-            <a href="/product/<%= producto.category_id %>/detail/<%= producto.id %>"><img src="../../public/img/<%= producto.image %>" class="card-img-top" alt="Vacio"></a>
+            <a href="/product/<%= producto.category_id %>/detail/<%= producto.id %>"><img src="/img/<%= producto.image %>" class="card-img-top" alt="Vacio"></a>
             <div class="card-body">
                 <h5 class="card-title"><%= producto.name %> </h5>
             <p class="card-text"><%= producto.name %> de <% for(categoria of category) { %> 
@@ -13,7 +13,7 @@
                 <% } %> 
             </p>
             </div>
-            <a class="btn btn-primary" href="/product/cart" role="button">Agregar al carrito</a>
+            <a class="btn btn-primary" href="/product/cartAdd/<%= producto.category_id %>/<%= producto.id %>" role="button">Agregar al carrito</a>
         </div>
     </div>
 <% } %> 

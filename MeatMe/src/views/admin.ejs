@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>MeatMe | Home</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/1349bde661.js" crossorigin="anonymous"></script>
+
+        <link href="/stylesheets/style_home.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <header>
+                <!-- menu -->
+                <nav class="navbar navbar-expand-md navbar-light purple lighten-4 mb-4">
+
+                  <!-- Navbar brand -->
+                  <a class="navbar-brand" href="/"><img id= "logo-menu" src="/img/Logo Meat Me - copia.png"></a>
+
+                  <!-- Collapse button -->
+                  <button class="navbar-toggler navbar-toggler-right toggler-example purple darken-3" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent41" aria-controls="navbarSupportedContent41" aria-expanded="false"
+                    aria-label="Toggle navigation"><span class="white-text"><i class="fas fa-bars fa-1x"></i></span></button>
+                
+                  <!-- Collapsible content -->
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent41">
+                
+                    <!-- Links -->
+                    <ul class=" navbar-nav mr-auto">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="/">INICIO <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">EMPRESA</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/product">PRODUCTOS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">RECETAS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">CONTACTOS</a>
+                      </li>
+                      <% if(user) { %>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/product/cart"><i class="fas fa-shopping-cart"></i></a>
+                      </li>
+                      <% } else { %>
+                    <% } %>
+                    <% if(user) { %>
+                      <% } else { %>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/users/register">REGISTRARSE</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="/users/login">LOGIN</a>
+                      </li>
+                    <% } %>
+                    </ul>
+                    <!-- Links -->
+                
+                  </div>
+                  <!-- Collapsible content -->
+                
+                </nav>
+                <!--/.Navbar-->
+               <div class="row bg-dark text-white">
+                    <div class="col-8">
+                        <h2>Bienvenido: <%= user.first_name %> <%= user.last_name %>  </h1>
+                    </div>
+                    <div class="col-4 d-flex justify-content-end">
+                        <button class="btn btn-outline-light border-0"  role="button"><a class="text-white text-decoration-none" href="/users/logout">LOGOUT</a></button>
+                    </div>
+               </div>
+            </header>
+<section>
+<div class="container row my-5">
+    <div class="col-8 bg-dark">
+        <button class="navbar-toggler navbar-toggler-right toggler-example purple darken-3" type="button" data-toggle="collapse"
+        data-target="#contenidoProducts" aria-controls="contenidoProducts" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="text-white"><i class="fas fa-bars fa-1x"> PRODUCTOS</i></span></button>
+      </div>
+      <div class="col-4">
+        <button class="btn btn-primary ml-3" role="button"><a class="text-white text-decoration-none" href="/product/create">NUEVO PRODUCTO</a></button>
+      </div>
+  <div class="collapse navbar-collapse row" id="contenidoProducts">
+      <% for(category of categorys) { %> 
+    <div class="col-12 mt-3">
+        <h3><%= category.name %> </h3>
+    </div>
+    <div class="col-12">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Peso</th>
+                <th scope="col">Imagen</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for(product of category.products) { %> 
+              <tr>
+                <th scope="row"><a href="/product/edit/<%= product.id %>"><%= product.id %></a></th>
+                <td><%= product.name %></td>
+                <td><%= product.price %></td>
+                <td><%= product.type %></td>
+                <td><%= product.weight %></td>
+                <td><%= product.image %></td>
+                <td>
+                  <form action="/product/delete/<%= product.id %>?_method=DELETE" method="POST" style="display: inline-flex">
+                  <button type="submit" class="btn btn-danger">ELIMINAR</button>
+                </form>
+              </td>
+              </tr>
+            </tbody>
+        <% } %> 
+          </table>
+    </div>
+<% } %> 
+  </div>
+</div>
+<div class="container row my-5">
+    <div class="col-12 bg-dark text-white">
+        <button class="navbar-toggler navbar-toggler-right toggler-example purple darken-3" type="button" data-toggle="collapse"
+        data-target="#contenidoUsuarios" aria-controls="contenidoUsuarios" aria-expanded="false"
+        aria-label="Toggle navigation"><span class="text-white"><i class="fas fa-bars fa-1x"> USUARIOS</i></span></button>
+      </div>
+  <div class="collapse navbar-collapse row mt-3" id="contenidoUsuarios">
+    <div class="col-12">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Email</th>
+                <th scope="col">Direccion</th>
+                <th scope="col">Ciudad</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for(user of users) { %> 
+              <tr>
+                <th scope="row"><%= product.id %></th>
+                <td><%= user.first_name %></td>
+                <td><%= user.last_name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.address %></td>
+                <td><%= user.city %></td>
+                <td><%= user.status %></td>
+              </tr>
+            </tbody>
+        <% } %> 
+          </table>
+    </div>
+  </div>
+</div>
+</section>
+<footer>
+
+</footer>

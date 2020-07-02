@@ -1,6 +1,6 @@
 <%- include("partials/header")  %>
 <section class="cart-section">
-    <div class="card" class="container row col-md-12">
+    <div class="card border-0" class="container row col-md-12">
         <div class="cart-table w-75 p-3 my-5 table-light justify-content-center mx-auto">
             <h3>Tus Compras</h3>
             <div class="cart-table-warp">
@@ -13,12 +13,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <% if(cart) { %> 
+                            <% for(item of cart) { %> 
                         <tr>
                             <td class="product-col col-8 p-0">
-                                <img class="thumb" src="/img/costeletas.jpeg" alt="">
+                                <img class="thumb" src="/img/<%= item.product.image %> " alt="">
                                 <div class="title">
-                                    <h4>Costeletas Cerdo</h4>
-                                    <p>$25.90</p>
+                                    <h4><%= item.product.name %> </h4>
+                                    <p>$ <%= item.product.price %></p>
                                 </div>
                             </td>
                             <td class="cantidad-col col-1 p-0">
@@ -29,48 +31,11 @@
                                 </div>
                             </td>
                             <td class="total-col w-25 col-3 p-0">
-                                <h4>$25.90</h4>
+                                <span>$ </span><h4 class="precio"><%= item.product.price %> </h4>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="product-col col-8 p-0">
-                                <img class="thumb" src="/img/Chuleton.png" alt="">
-                                <div class="title">
-                                    <h4>Chuleton</h4>
-                                    <p>$45.90</p>
-                                </div>
-                            </td>
-                            <td class="cantidad-col col-1 p-0">
-                                <div class="cantidad d-flex w-50 mr-0">
-                                    <div class="pro-cant">
-                                        <input class="d-flex w-100" type="text" value="1">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="total-col col-3 p-0">
-                                <h4>$45.90</h4>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="product-col col-8 p-0">
-                                <img class="thumb" src="/img/elegida17.jpg" alt="">
-                                <div class="title">
-                                    <h4>Vacio</h4>
-                                    <p>$55.90</p>
-                                </div>
-                            </td>
-                            <td class="cantidad-col col-1 p-0">
-                                <div class="cantidad d-flex w-50 mr-0">
-                                    <div class="pro-cant">
-                                        <input class="d-flex w-100" type="text" value="1">
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="total-col col-3 p-0">
-                                <h4>$55.90</h4>
-                            </td>
-                        </tr>
-         
+                        <% } %> 
+                    <% } %> 
                     </tbody>
                 </table>
             </div>

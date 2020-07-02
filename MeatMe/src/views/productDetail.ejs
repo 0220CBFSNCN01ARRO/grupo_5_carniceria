@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 d-flex justify-content-center  align-items-center">
-             <img alt="Product image" src="/img/<%= product[0].image %>" id="profile-image1" class="img-circle img-responsive"> 
+               <img class="imagen-productDetail" class="img-fluid" src="/img/<%= product[0].image %>" alt="<%= product[0].name %>" >
         </div>
         <nav class="col-12">
             <ul class="text-center pl-0">
@@ -13,7 +13,7 @@
             </ul>
         </nav>
         <div class="col-12 text-center" class="card-body">
-            <a class="btn btn-primary my-4" href="/product/cart" role="button">Agregar al carrito</a>
+            <a class="btn btn-primary my-4" href="/product/cartAdd/<%= producto.category_id %>/<%= producto.id %>" role="button">Agregar al carrito</a>
         </div>
     </div>
 </div>

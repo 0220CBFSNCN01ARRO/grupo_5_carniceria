@@ -1,57 +1,32 @@
 
-const fs = require('fs');
-const path = require('path');
+// const fs = require('fs');
+// const path = require('path');
 const bcrypt = require('bcrypt');
 const db = require('../database/models');
-let usersPath = path.join(__dirname, '../data/usuarios.json');
+let sequelize = db.sequelize;
+const { Op } = db.Sequelize;
 
-function getUsers() {
-    let userContent = fs.readFileSync(usersPath, 'utf-8')
-    return userContent != '' ? JSON.parse(userContent) : []
-}
-function generarID() {
-    let usuarios = getUsers();
-    if (usuarios.length) {
-        let ids = usuarios.map((user) => user.id);
-        return Math.max(...ids) + 1;
-    } else {
-        return 1
-    };
-};
 
-function getUserByEmail(email) {
-    let usuarios = getUsers();
-    usuarios.find(user => user.email == email)
-    return usuarios.find(user=>user.email == email)
 
-}
-
-function getUserById(id) {
-    let usuarios = getUsers();
-    return usuarios.find(user => user.id == id)
-}
-function guardarUsuario(usuario) {
-    let usuarios = getUsers();
-    usuarios.push(usuario);
-    fs.writeFileSync(usersPath, JSON.stringify(usuarios, null, " "));
-}
 
 module.exports = {
     register: (req, res) => {
         res.render("register");
     },
     store: (req, res, next) => {
+        delete req.body.repasswword;
         req.body.password = bcrypt.hashSync(req.body.password, 10);
-        let usuarioNuevo = {
-            id: generarID(),
-            ...req.body,
-            avatar: req.files[0].filename
-        }
-        guardarUsuario(usuarioNuevo);
-        res.redirect('/')
+        req.body.avatar = req.files[0].filename;
+        db.Users.create(req.body)
+        .then( res.redirect('/'))
+      
     },
-    admin: (req, res) => {
-        res.render("productAdd");
+    admin: async (req, res) => {
+      const categorys = await db.Categorys.findAll({
+            include: [{ association: "products" }]
+        })
+      const users = await db.Users.findAll()
+        res.render("admin", { categorys, users });
     },
 
     login: (req, res) => {
@@ -59,27 +34,35 @@ module.exports = {
     },
 
     processLogin: (req, res, next) => {
-        let usuario = getUserByEmail(req.body.email)
-        if (usuario != undefined) {
-            if (bcrypt.compareSync(req.body.password, usuario.password)) {
-                req.session.user = usuario;
-                if (req.body.remember){
-                    res.cookie('user', usuario, { maxAge: 1000 * 60 * 60 * 24 * 90 });
-                    // req.session.user = req.cookies.user;
-                }
-                res.redirect(`profile/${usuario.id}`)
-            } else {
-                res.send('La contraseña no es correcta')
+        db.Users.findAll({
+            where: {
+                email: { [Op.like]: [ req.body.email ] }
             }
+        })
+        .then( usuario => {
+        if (usuario[0] != undefined) {
+             if (bcrypt.compareSync(req.body.password, usuario[0].password)) {
+                    req.session.user = usuario[0];
+                    if (req.body.remember){
+                        res.cookie('user', usuario, { maxAge: 1000 * 60 * 60 * 24 * 90 });
+                        // req.session.user = req.cookies.user;
+                    }
+                    if(usuario[0].status == 0 && 1){
+                res.redirect(`profile/${usuario[0].id}`)
+                    } else {
+                        // req.session.admin = usuario;
+                        res.redirect(`admin/${usuario[0].id}`)
+                    }
+                } else {
+                res.send('La contraseña no es correcta')
+                }
         } else {
-            res.send("No existe usuario con ese Email")
+            res.send("El usuario no existe")
         }
-
-
+        })
     },
     profile: (req, res) => {
-        let usuario = getUserById(req.params.id)
-        res.render('profile', { usuario });
+        res.render('profile');
     },
     logout: (req, res) => {
         req.session.user = null

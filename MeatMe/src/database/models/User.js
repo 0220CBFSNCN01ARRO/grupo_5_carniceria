@@ -1,14 +1,14 @@
 module.exports = (sequelize, DataTypes) => {
 
     const cols = {
-        fist_name: DataTypes.STRING,
-        last_name: DataTypes.STRING,
-        email: DataTypes.STRING,
-        password: DataTypes.STRING,
-        address: DataTypes.STRING,
-        city: DataTypes.STRING,
-        state: DataTypes.STRING,
-        avatar: DataTypes.STRING,
+        first_name: {type: DataTypes.STRING, allowNull: false},
+        last_name: {type: DataTypes.STRING, allowNull: false},
+        email: {type: DataTypes.STRING, allowNull: false},
+        password: {type: DataTypes.STRING, allowNull: false},
+        address: {type: DataTypes.STRING, allowNull: false},
+        city: {type: DataTypes.STRING, allowNull: false},
+        state: {type: DataTypes.STRING, allowNull: false},
+        avatar: {type: DataTypes.STRING},
         status: DataTypes.INTEGER
     }
 
@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     const User = sequelize.define('Users',cols,config);
 
     User.associate = function(models) {
-        User.belongsTo(models.Orders,{
+        User.hasOne(models.Orders,{
             as: 'order',
             foreignKey: 'users_id'
         });

@@ -1,14 +1,15 @@
 <%- include("partials/header")  %>
 
 <div class="container">
-    <div class="encabezado-formulario mb-5" class="row">
-        <div class="col-12 d-flex justify-content-center border-top border-dark pt-3 my-5">
-            <h1 class="text-uppercase" >Formulario de registro</h1></div>
-        <div class="alert alert-primary" role="alert" class="col-12 d-flex justify-content-center">
-            <p class="text-center mb-0">Una vez registrado podra utilizar nuestro carrito de compras exclusivo para clientes y acceder a las ofertas.</p>
-        </div>
-    </div>
+    
 <form action="/users/register" method="POST" enctype="multipart/form-data">
+  <div class="encabezado-formulario mb-5" class="row">
+    <div class="col-12 d-flex justify-content-center border-top border-dark pt-3 my-5">
+        <h1 class="text-uppercase" >Formulario de registro</h1></div>
+    <div class="alert alert-primary" role="alert" class="col-12 d-flex justify-content-center">
+        <p class="text-center mb-0">Una vez registrado podra utilizar nuestro carrito de compras exclusivo para clientes y acceder a las ofertas.</p>
+    </div>
+</div>
     <div class="container-fluid my-5 border-bottom border-dark">
         <div class="form-group justify-content-center row">
             <label for="inputName" class="col-sm-3 col-form-label">Nombre: *</label>
@@ -44,7 +45,7 @@
           <div class="form-group justify-content-center row">
             <label for="inputDireccion" class="col-sm-3 col-form-label">Direccion: </label>
             <div class="col-sm-7">
-              <input type="text" name="adress" class="form-control" id="inputDireccion">
+              <input type="text" name="address" class="form-control" id="inputDireccion">
             </div>
           </div>
           <div class="form-group justify-content-center row">
@@ -63,8 +64,10 @@
              <label class="col-sm-3 col-form-label">Subir imagen: </label>
              <div class="col-sm-7">
               <input type="file" id="inputImage" name="avatar">
-
             </div>
+          </div>
+          <div>
+            <input style="display: none" type="text" name="status" value="0">
           </div>
         <div class="form-group justify-content-center row">
              <button type="submit" class="btn btn-primary my-5">Enviar</button>
