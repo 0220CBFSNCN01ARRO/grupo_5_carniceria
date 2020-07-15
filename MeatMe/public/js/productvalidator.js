@@ -29,11 +29,12 @@ window.addEventListener("load", () => {
 
 
         if (errors.length != 0) {
-            e.preventDefault();
+            e.preventDefault()
 
-            errors.forEach(error => {
-                errorSec.innerHTML += "<li>" + error + "</li>";
-            })
+            for (let i = 0; i < errors.length; i=i+2) {
+    
+                document.querySelector(`.${errors[i]}.invalid-feedback`).innerHTML = `<p>${errors[(i+1)]}</p>`
+        
         }
     })
 });
