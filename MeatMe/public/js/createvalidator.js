@@ -1,7 +1,6 @@
 window.addEventListener("load", () => {
     let formCreate = document.querySelector(".create");
     let category = document.querySelector("#inputTipoProducto");
-    console.log(category.innerText)
     let name = document.querySelector("#inputNombreProducto");
     let type = document.querySelector("#inputTipoProducto");
     let weight = document.querySelector("#inputKgPorUnidad");
@@ -11,7 +10,7 @@ window.addEventListener("load", () => {
     formCreate.addEventListener("submit", (e) => {
         let errors = [];
 
-        if (category.value.trim() == "") {
+        if (category.value.trim() == "0") {
             category.classList.add("is-invalid");
             errors.push("category","Debe seleccionar una categoria")
         }
@@ -19,7 +18,7 @@ window.addEventListener("load", () => {
             name.classList.add("is-invalid");
             errors.push("name","El nombre es obligatorio")
         }
-        if (type.value.trim() == "") {
+        if (type.value.trim() == "0") {
             type.classList.add("is-invalid");
             errors.push("type","Debe seleccionar Unidad o Kg")
         }

@@ -16,7 +16,7 @@
         <div class="col-sm-7">
           <select name="category" id="inputTipoProducto" class="form-control">
             
-            <option selected disabled>Seleccione una categoria</option>
+            <option selected value= "0">Seleccione una categoria</option>
             <% for(category of categorys) { %> 
             <option value="<%= category.id %>"><%= category.name %></option>
             <% } %> 
@@ -36,7 +36,7 @@
         <div class="col-sm-7">
           <select name="type" id="inputTipoProducto" class="form-control">
             
-            <option disabled selected>Seleccione una opcion</option>
+            <option selected value= "0">Seleccione una opcion</option>
             <option value="Kg">Kg</option>
             <option value="Unidad">Unidad</option>
           </select>
@@ -46,7 +46,7 @@
     <div class="form-group justify-content-center row">
         <label for="inputKgPorUnidad" class="col-sm-3 col-form-label">Peso / Cantidad: </label>
         <div class="col-sm-7">
-          <input type="number" class="form-control" id="inputKgPorUnidad" name="weight" value="1" placeholder="Completar Kg por unidad solo si el producto se vende por unidad">
+          <input type="number" class="form-control" id="inputKgPorUnidad" name="weight" value="" placeholder="Completar Kg por unidad solo si el producto se vende por unidad">
           <div class="weight invalid-feedback"></div>
         </div>
       </div>
