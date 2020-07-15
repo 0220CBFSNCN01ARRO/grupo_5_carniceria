@@ -15,14 +15,13 @@ module.exports = {
     },
     store: (req, res, next) => {
         let errors = validationResult(req);
-        console.log(req.files)
 
         if(!errors.isEmpty()){
            return res.render("register",{ errors: errors.errors })
         } else {
         delete req.body.repassword;
         req.body.password = bcrypt.hashSync(req.body.password, 10);
-        req.body.avatar = req.files.length ? req.files[0].filename : "avatardefault.png";
+        req.body.avatar = req.file ? req.file.filename : "avatardefault.png";
         
         db.Users.findOne({
             where: {

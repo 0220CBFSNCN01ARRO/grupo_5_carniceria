@@ -12,19 +12,30 @@ const guestRoute = require('../middlewares/guestRoute');
 const validator = require("../validators/userValidator");
 
 var storage = multer.diskStorage({
-      destination: (req, file, cb) => {
-            cb(null, path.join(__dirname,'../../public/img/avatars'))
-      },
+      destination: path.resolve(__dirname,'../../public/img/avatars'),
       filename: (req, file, cb) => {
             cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
       }
     })
-    var upload = multer({ storage: storage })
+    const upload = multer({ 
+      storage,
+      limits: { fileSize: 1024 * 1024 * 1024 },
+      fileFilter: (req, file, cb) => {
+          if (file.mimetype !== 'image/png' && file.mimetype !== 'image/jpg' && file.mimetype !== 'image/jpeg') {
+                console.log(file)
+              file.error = "type";
+              req.file = file;
+  
+              return cb(null, false, new Error('Está mal el mimeType'));
+          }
+          return cb(null, true);
+      }
+  });
 
 
 /* GET users listing. */
 router.get('/register', guestRoute, controllers.register);
-router.post('/register', upload.any(), validator.register, controllers.store);
+router.post('/register', upload.single("avatar"), validator.register, controllers.store);
 
 router.get('/login', guestRoute,controllers.login);
 router.post('/login', validator.login, controllers.processLogin);
