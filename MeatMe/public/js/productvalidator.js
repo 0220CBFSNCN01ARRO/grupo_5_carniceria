@@ -1,33 +1,26 @@
 window.addEventListener("load", () => {
     let form = document.querySelector("form");
-    let errorSec = document.querySelector("#errors");
-    let name = document.querySelector("#name");
-    let type = document.querySelector("#type");
-    let weight = document.querySelector("#weight");
-    let price = document.querySelector("#price");
-    let image = document.querySelector("#image");
+    let name = document.querySelector("#inputNombreProducto");
+    let weight = document.querySelector("#inputKgPorUnidad");
+    let price = document.querySelector("#inputPrecioPorKg");
+    let image = document.querySelector("#file");
 
 
     form.addEventListener("submit", (e) => {
         let errors = [];
 
         if (name.value.trim() == "") {
-            errors.push("El nombre es obligatorio")
-        }
-        if (type.value.trim() == "") {
-            errors.push("La categoria es obligatoria")
+            name.classList.add("is-invalid");
+            errors.push("name","El nombre es obligatorio")
         }
         if (weight.value.trim() == "") {
-            errors.push("Debe ingresar el peso")
+            weight.classList.add("is-invalid");
+            errors.push("weight","Debe ingresar el peso")
         }
         if (price.value.trim() == "") {
-            errors.push("Debe ingresar el Precio")
+            price.classList.add("is-invalid");
+            errors.push("price","Debe ingresar el Precio")
         }
-        if (image.value.trim() == "") {
-            errors.push("Debe ingresar una imagen del producto")
-        }
-
-
         if (errors.length != 0) {
             e.preventDefault()
 
@@ -36,5 +29,6 @@ window.addEventListener("load", () => {
                 document.querySelector(`.${errors[i]}.invalid-feedback`).innerHTML = `<p>${errors[(i+1)]}</p>`
         
         }
+    }
     })
 });

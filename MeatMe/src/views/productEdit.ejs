@@ -38,7 +38,8 @@
       <div class="form-group justify-content-center row">
         <label for="inputNombreProducto" class="col-sm-3 col-form-label">Nombre del Producto: *</label>
         <div class="col-sm-7">
-          <input type="text" class="form-control" id="inputNombreProducto" name="name" value=<%= Products.name %> required>
+          <input type="text" class="form-control" id="inputNombreProducto" name="name" value=<%= Products.name %> >
+          <div class="name invalid-feedback"></div>
         </div>
       </div>
       <div class="form-group justify-content-center row">
@@ -55,12 +56,14 @@
         <label for="inputKgPorUnidad" class="col-sm-3 col-form-label">Kg por Unidad: </label>
         <div class="col-sm-7">
           <input type="number" class="form-control" id="inputKgPorUnidad" name="weight" value=<%= Products.weight %> placeholder="Completar Kg por unidad solo si el producto se vende por unidad">
+          <div class="weight invalid-feedback"></div>
         </div>
       </div>
     <div class="form-group justify-content-center row">
         <label for="inputPrecioPorKg" class="col-sm-3 col-form-label">Precio por Kg: *</label>
         <div class="col-sm-7">
-          <input type="number" class="form-control" id="inputPrecioPorKg" name="price" value=<%= Products.price %> required>
+          <input type="number" class="form-control" id="inputPrecioPorKg" name="price" value=<%= Products.price %> >
+          <div class="price invalid-feedback"></div>
         </div>
       </div>
       <div class="form-group justify-content-center row">
@@ -74,6 +77,6 @@
 </div>
 </div>
 
-<script src= "../js/productvalidator.js"></script>
+<script src= "/js/productvalidator.js"></script>
 
 <%- include("partials/footer") %>
