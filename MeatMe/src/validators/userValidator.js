@@ -31,7 +31,14 @@ module.exports = {
         check("state")
             .trim()
             .optional()
-            .isString().withMessage("No puede ingresar numeros en el campo provincia")
+            .isString().withMessage("No puede ingresar numeros en el campo provincia"),
+        check('avatar')
+            .custom((value, { req }) => {
+                if (req.file.error === 'type') {
+                    throw new Error('La imagen debe ser de tipo PNG, JPG o JPEG');
+                }
+                return true;
+        })
     ],
 
     login: [
