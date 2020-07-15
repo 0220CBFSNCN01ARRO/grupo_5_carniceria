@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const db = require('../database/models');
 let sequelize = db.sequelize;
 const { Op } = db.Sequelize;
-
+const { check, validationResult, body } = require("express-validator");
 
 
 
@@ -14,12 +14,33 @@ module.exports = {
         res.render("register");
     },
     store: (req, res, next) => {
-        delete req.body.repasswword;
+        let errors = validationResult(req);
+        console.log(req.files)
+
+        if(!errors.isEmpty()){
+           return res.render("register",{ errors: errors.errors })
+        } else {
+        delete req.body.repassword;
         req.body.password = bcrypt.hashSync(req.body.password, 10);
-        req.body.avatar = req.files[0].filename;
-        db.Users.create(req.body)
-        .then( res.redirect('/'))
-      
+        req.body.avatar = req.files.length ? req.files[0].filename : "avatardefault.png";
+        
+        db.Users.findOne({
+            where: {
+                email: { [Op.like]: [ req.body.email ] }
+            }
+        }).then( user => {
+            if(!user){
+                db.Users.create(req.body).then()
+                    res.redirect('/')
+            } else {
+                errors = [ 
+                    { msg: "El email ya existe" }
+                ]
+                return res.render("register",{ errors: errors })
+            }
+        })
+        
+    }
     },
     admin: async (req, res) => {
       const categorys = await db.Categorys.findAll({
@@ -34,6 +55,12 @@ module.exports = {
     },
 
     processLogin: (req, res, next) => {
+        let errors = validationResult(req);
+        console.log(errors)
+        if(!errors.isEmpty()){
+            console.log(errors)
+           return res.render("login",{ errors: errors.errors })
+        } else {
         db.Users.findAll({
             where: {
                 email: { [Op.like]: [ req.body.email ] }
@@ -48,18 +75,25 @@ module.exports = {
                         // req.session.user = req.cookies.user;
                     }
                     if(usuario[0].status == 0 && 1){
-                res.redirect(`profile/${usuario[0].id}`)
+                      res.redirect(`profile/${usuario[0].id}`)
                     } else {
-                        // req.session.admin = usuario;
                         res.redirect(`admin/${usuario[0].id}`)
                     }
                 } else {
-                res.send('La contraseña no es correcta')
+                    errors = [ 
+                        { msg: "La contraseña no es correcta" }
+                    ]
+                   return res.render("login",{ errors: errors })
                 }
         } else {
-            res.send("El usuario no existe")
+            errors = [ 
+                { msg: "El usuario no es correcto" }
+            ]
+           return res.render("login",{ errors: errors })
+
         }
         })
+    }
     },
     profile: (req, res) => {
         res.render('profile');
