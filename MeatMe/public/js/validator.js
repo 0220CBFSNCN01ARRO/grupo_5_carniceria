@@ -13,9 +13,10 @@ window.addEventListener("load", () => {
     let rePassword = document.querySelector("#inputConfirmarContraseña");
     // let avatar = document.querySelector("#inputAvatar");
     // console.log(avatar.files)
-    // let address = document.querySelector("#inputDireccion");
-    // let city = document.querySelector("#inputLocalidad");
-    // let state = document.querySelector("#inputProvincia");
+    let address = document.querySelector("#inputDireccion");
+    let city = document.querySelector("#inputLocalidad");
+    let state = document.querySelector("#inputProvincia");
+    
     formRegister.addEventListener("submit", (e) => {
         
         let errors = [];
@@ -30,7 +31,7 @@ window.addEventListener("load", () => {
         }
         if(last_name.value.trim() == ""){
             last_name.classList.add("is-invalid");
-            errors.push("last_name","Debe ingresar un nombre")
+            errors.push("last_name","Debe ingresar un apellido")
         }
         if(last_name.value.trim().length < 3 || last_name.value.trim().length > 50){
             last_name.classList.add("is-invalid");
@@ -52,15 +53,15 @@ window.addEventListener("load", () => {
             rePassword.classList.add("is-invalid");
             errors.push("repassword","Las contraseñas no son iguales")
         }
-      
 
+    
         if(errors.length) {
 
             e.preventDefault()
     
            for (let i = 0; i < errors.length; i=i+2) {
     
-            document.querySelector(`.${errors[i]}.invalid-feedback`).innerHTML = `<p>${errors[(i+1)]}</p>`
+            document.querySelector(`.${errors[i]}.invalid-feedback`).innerHTML =`<p>${errors[(i+1)]}</p>`
     
            }
         }
