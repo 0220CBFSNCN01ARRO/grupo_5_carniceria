@@ -2,7 +2,7 @@
 <div class="container">
     
 <div class="container-fluid my-5">
-  <form action="/product/create" method="POST" enctype="multipart/form-data" >
+  <form class="create" action="/product/create" method="POST" enctype="multipart/form-data" >
     <div class="encabezado-formulario mb-5" class="row">
       <div class="col-12 d-flex justify-content-center border-top border-dark pt-3 my-5">
           <h1 class="text-uppercase">Formulario de carga de Producto</h1>
@@ -15,39 +15,46 @@
         <label for="inputTipoProducto" class="col-sm-3 col-form-label">Categoria: *</label>
         <div class="col-sm-7">
           <select name="category" id="inputTipoProducto" class="form-control">
+            
             <option selected disabled>Seleccione una categoria</option>
             <% for(category of categorys) { %> 
             <option value="<%= category.id %>"><%= category.name %></option>
             <% } %> 
           </select>
+          <div class="category invalid-feedback"></div>
         </div>
       </div>
       <div class="form-group justify-content-center row">
         <label for="inputNombreProducto" class="col-sm-3 col-form-label">Nombre del Producto: *</label>
         <div class="col-sm-7">
-          <input type="text" class="form-control" id="inputNombreProducto" name="name"  required>
+          <input type="text" class="form-control" id="inputNombreProducto" name="name"  >
+          <div class="name invalid-feedback"></div>
         </div>
       </div>
       <div class="form-group justify-content-center row">
         <label for="inputKg/Unidad" class="col-sm-3 col-form-label">Kg o Unidad: *</label>
         <div class="col-sm-7">
           <select name="type" id="inputTipoProducto" class="form-control">
+            
             <option disabled selected>Seleccione una opcion</option>
             <option value="Kg">Kg</option>
             <option value="Unidad">Unidad</option>
           </select>
+          <div class="type invalid-feedback"></div>
         </div>
       </div>
     <div class="form-group justify-content-center row">
         <label for="inputKgPorUnidad" class="col-sm-3 col-form-label">Peso / Cantidad: </label>
         <div class="col-sm-7">
           <input type="number" class="form-control" id="inputKgPorUnidad" name="weight" value="1" placeholder="Completar Kg por unidad solo si el producto se vende por unidad">
+          <div class="weight invalid-feedback"></div>
         </div>
       </div>
     <div class="form-group justify-content-center row">
         <label for="inputPrecioPorKg" class="col-sm-3 col-form-label">Precio por Kg: *</label>
         <div class="col-sm-7">
-          <input type="number" class="form-control" id="inputPrecioPorKg" name="price"  required>
+          <input type="number" class="form-control" id="inputPrecioPorKg" name="price"  >
+          <div class="price invalid-feedback"></div>
         </div>
       </div>
       <div class="form-group justify-content-center row">
@@ -60,4 +67,6 @@
   </form>
   </div>
 </div>
+
+<script src= "/js/createvalidator.js"></script>
 <%- include("partials/footer") %>

@@ -70,8 +70,8 @@ module.exports = {
              if (bcrypt.compareSync(req.body.password, usuario[0].password)) {
                     req.session.user = usuario[0];
                     if (req.body.remember){
-                        res.cookie('user', usuario, { maxAge: 1000 * 60 * 60 * 24 * 90 });
-                        // req.session.user = req.cookies.user;
+                        res.cookie('user', usuario[0], { maxAge: 1000 * 60 * 60 * 24 * 90 });
+                        req.session.user = req.cookies.user;
                     }
                     if(usuario[0].status == 0 && 1){
                       res.redirect(`profile/${usuario[0].id}`)

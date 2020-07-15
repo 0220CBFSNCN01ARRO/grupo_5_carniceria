@@ -6,6 +6,7 @@ var path = require("path");
 const userRoute = require('../middlewares/UserRoute');
 var adminRoute = require("../middlewares/adminRoute");
 var cart = require("../middlewares/cart")
+const { check, validationResult, body } = require("express-validator");
 
 var storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -26,11 +27,24 @@ router.get('/cartAdd/:category/:id',cart, controllers.cartAdd);
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create/',userRoute, adminRoute, controllers.create); 
-router.post('/create/',userRoute, adminRoute, upload.any(), controllers.store); 
+router.post('/create/',userRoute, adminRoute, upload.any(),[
+      check('name').notEmpty(),
+      check('category').notEmpty(),
+      check('type').notEmpty(),
+      check('price').notEmpty(),
+      check('weight').notEmpty()], 
+      controllers.store); 
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id',userRoute, adminRoute, controllers.edit); 
-router.put('/edit/:id',userRoute, adminRoute, upload.any(), controllers.update); 
+router.put('/edit/:id',userRoute, adminRoute, upload.any(),[
+check('name').notEmpty(),
+check('category').notEmpty(),
+check('type').notEmpty(),
+check('price').notEmpty(),
+check('weight').notEmpty(),]
+
+, controllers.update); 
 
 /*** DELETE ONE PRODUCT***/ 
 router.delete('/delete/:id',userRoute, adminRoute, controllers.destroy); 
