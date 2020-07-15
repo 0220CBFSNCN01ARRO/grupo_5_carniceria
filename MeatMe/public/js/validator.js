@@ -13,44 +13,54 @@ window.addEventListener("load", () => {
     let rePassword = document.querySelector("#inputConfirmarContraseña");
     // let avatar = document.querySelector("#inputAvatar");
     // console.log(avatar.files)
-    // let address = document.querySelector("#inputDireccion");
-    // let city = document.querySelector("#inputLocalidad");
-    // let state = document.querySelector("#inputProvincia");
+    let address = document.querySelector("#inputDireccion");
+    let city = document.querySelector("#inputLocalidad");
+    let state = document.querySelector("#inputProvincia");
+    
     formRegister.addEventListener("submit", (e) => {
         
         let errors = [];
 
         if(first_name.value.trim() == ""){
-            first_name.classList.add("is-invalid");
+            //first_name.classList.add("is-invalid");
             errors.push("first_name","Debe ingresar un nombre")
         }
         if(first_name.value.trim().length < 3 || first_name.value.trim().length > 50){
-            first_name.classList.add("is-invalid");
+            //first_name.classList.add("is-invalid");
             errors.push("first_name","El nombre puede tener min. 3 letras y max. 50 letras")
         }
         if(last_name.value.trim() == ""){
-            last_name.classList.add("is-invalid");
-            errors.push("last_name","Debe ingresar un nombre")
+            //last_name.classList.add("is-invalid");
+            errors.push("last_name","Debe ingresar un apellido")
         }
         if(last_name.value.trim().length < 3 || last_name.value.trim().length > 50){
-            last_name.classList.add("is-invalid");
+            //last_name.classList.add("is-invalid");
             errors.push("last_name","El apellido puede tener min. 3 letras y max. 50 letras")
         }
         if(email.value.trim() == ""){
-            email.classList.add("is-invalid");
+            //email.classList.add("is-invalid");
             errors.push("email","Debe ingresar un email")
         }
         if(password.value.trim().length < 8){
-            password.classList.add("is-invalid");
+            //password.classList.add("is-invalid");
             errors.push("password","La contraseña debe tener minimo 8 caracteres")
         }
         if(password.value.trim().indexOf("#") != -1 || password.value.trim().indexOf("!") != -1 || password.value.trim().indexOf("$") != -1 || password.value.trim().indexOf("%") != -1 || password.value.trim().indexOf("&") != -1 || password.value.trim().indexOf("/") != -1 || password.value.trim().indexOf("(") != -1 || password.value.trim().indexOf(")") != -1 || password.value.trim().indexOf("=") != -1 || password.value.trim().indexOf("?") != -1 || password.value.trim().indexOf("¡") != -1){
-            password.classList.add("is-invalid");
+            //password.classList.add("is-invalid");
             errors.push("password","La contraseña no puede tener los siguientes caracteres (!#$%&/()=?¡)")
         }
         if(rePassword.value.trim() != password.value.trim()){
-            rePassword.classList.add("is-invalid");
+            //rePassword.classList.add("is-invalid");
             errors.push("repassword","Las contraseñas no son iguales")
+        }
+        if (address.value.trim()== "") {
+           errors.push("address","La direccion es obligatoria");
+        }
+        if (city.value.trim()== "") {
+            errors.push("city","La ciudad es obligatoria");
+        }
+        if (state.value.trim()== "") {
+            errors.push("state","La Provincia es obligatoria");
         }
       
 
