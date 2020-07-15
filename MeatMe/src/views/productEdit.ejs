@@ -35,7 +35,11 @@
       <div class="form-group justify-content-center row">
         <label for="inputKg/Unidad" class="col-sm-3 col-form-label">Kg o Unidad: *</label>
         <div class="col-sm-7">
-          <input type="text" class="form-control" id="inputKg/Unidad" name="type" value=<%= Products.type %> required>
+          <select name="type" id="inputTipoProducto" class="form-control">
+            <option value="<%= Products.type %>" selected><%= Products.type %></option>
+            <option value="Kg">Kg</option>
+            <option value="Unidad">Unidad</option>
+          </select>
         </div>
       </div>
     <div class="form-group justify-content-center row">
