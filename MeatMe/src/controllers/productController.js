@@ -66,7 +66,7 @@ const controller = {
   // Create -  guardar
 	store: (req, res) => {
     product = req.body;
-        product.image = req.files ? req.files[0].filename : '';
+        product.image = req.files ? req.files[0].filename : 'sin_imagen.jpg';
 
         db.Products
             .create(product)
