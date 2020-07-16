@@ -17,6 +17,7 @@ window.addEventListener("load", () => {
     let city = document.querySelector("#inputLocalidad");
     let state = document.querySelector("#inputProvincia");
     
+   
     formRegister.addEventListener("submit", (e) => {
         
         let errors = [];
@@ -25,17 +26,17 @@ window.addEventListener("load", () => {
             first_name.classList.add("is-invalid");
             errors.push("first_name","Debe ingresar un nombre")
         }
-        if(first_name.value.trim().length < 3 || first_name.value.trim().length > 50){
+        if(first_name.value.trim().length < 3 || first_name.value.trim().length > 30){
             first_name.classList.add("is-invalid");
-            errors.push("first_name","El nombre puede tener min. 3 letras y max. 50 letras")
+            errors.push("first_name","El nombre puede tener min. 3 letras y max. 30 letras")
         }
         if(last_name.value.trim() == ""){
             last_name.classList.add("is-invalid");
             errors.push("last_name","Debe ingresar un apellido")
         }
-        if(last_name.value.trim().length < 3 || last_name.value.trim().length > 50){
+        if(last_name.value.trim().length < 3 || last_name.value.trim().length > 30){
             last_name.classList.add("is-invalid");
-            errors.push("last_name","El apellido puede tener min. 3 letras y max. 50 letras")
+            errors.push("last_name","El apellido puede tener min. 3 letras y max. 30 letras")
         }
         if(email.value.trim() == ""){
             email.classList.add("is-invalid");
@@ -65,7 +66,43 @@ window.addEventListener("load", () => {
     
            }
         }
-    
+        
+        first_name.onkeydown = () => {
+            if(first_name.value.trim() != ""){
+                first_name.classList.remove("is-invalid");
+            }
+            first_name.onblur = () => {
+                if(first_name.value.trim().length < 3 || first_name.value.trim().length > 30) {
+                    first_name.classList.add("is-invalid");
+             
+                }
+            }
+        }
+        last_name.onkeydown = () => {
+            if(last_name.value.trim() != ""){
+                last_name.classList.remove("is-invalid");
+            }
+            last_name.onblur = () => {
+                if(last_name.value.trim().length < 3 || last_name.value.trim().length > 30) {
+                    last_name.classList.add("is-invalid");
+                }
+            }
+        }
+        email.onkeydown = () => {
+            if(email.value.trim() != ""){
+                email.classList.remove("is-invalid");
+            }
+        }
+        password.onkeydown = () => {
+            if(password.value.trim() != ""){
+                password.classList.remove("is-invalid");
+            }
+            password.onblur = () => {
+                if(password.value.trim().length < 8) {
+                    password.classList.add("is-invalid");
+                }
+            }
+        }
     })
 }
     //__________________________________________________________________________________________________________________//
@@ -105,8 +142,33 @@ window.addEventListener("load", () => {
     
            }
         }
+    
+        email.onkeydown = () => {
+            if(email.value.trim() != ""){
+                email.classList.remove("is-invalid");
+            }
+            email.onblur = () => {
+                if(email.value.trim().indexOf("@") != -1){
+                    email.classList.add("is-invalid");
+                    errors.push("email","Debe ingresar un email valido")
+                }
+            }
+        }
+        password.onkeydown = () => {
+            if(password.value.trim() != "" ){
+                password.classList.remove("is-invalid");
+            }
+            password.onblur = () => {
+                if(password.value.trim().length < 8 ){
+                    password.classList.add("is-invalid");
+                    errors.push("password","La contraseña debe tener minimo 8 caracteres")
+                }
+            }
+
+        }
     })
     }
+
     //________________________________________________________________________________________________________________//
 
    

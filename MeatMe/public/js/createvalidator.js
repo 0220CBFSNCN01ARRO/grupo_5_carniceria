@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
         }
         if (name.value.trim() == "") {
             name.classList.add("is-invalid");
-            errors.push("name","El nombre es obligatorio")
+            errors.push("name","Debe ingresar un nombre")
         }
         if (type.value.trim() == "0") {
             type.classList.add("is-invalid");
@@ -36,9 +36,28 @@ window.addEventListener("load", () => {
             for (let i = 0; i < errors.length; i=i+2) {
     
                 document.querySelector(`.${errors[i]}.invalid-feedback`).innerHTML = `<p>${errors[(i+1)]}</p>`
-        
+            }
         }
-    }
+        category.onchange = () => {
+            if(category.value != 0){
+                category.classList.remove("is-invalid")
+            }
+        }
+        type.onchange = () => {
+            if(type.value != 0){
+                type.classList.remove("is-invalid")
+            }
+        }
+        name.onkeydown = () => {
+            if(name.value != ""){
+                name.classList.remove("is-invalid")
+            }
+        }
+        price.onkeydown = () => {
+            if(price.value != ""){
+                price.classList.remove("is-invalid")
+            }
+        }
     })
     
 })

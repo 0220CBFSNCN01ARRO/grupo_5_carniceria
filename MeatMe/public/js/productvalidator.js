@@ -27,8 +27,20 @@ window.addEventListener("load", () => {
     
                 document.querySelector(`.${errors[i]}.invalid-feedback`).innerHTML = `<p>${errors[(i+1)]}</p>`
         
+            }
         }
-    }
+
+      
+        name.onkeydown = () => {
+            if(name.value != ""){
+                name.classList.remove("is-invalid")
+            }
+        }
+        price.onkeydown = () => {
+            if(price.value != ""){
+                price.classList.remove("is-invalid")
+            }
+        }
     })
 
     
