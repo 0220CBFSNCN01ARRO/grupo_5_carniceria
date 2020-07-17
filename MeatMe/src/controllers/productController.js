@@ -8,7 +8,7 @@ const controller = {
     const category = await db.Categorys.findAll()
 
       const product = await db.Products.findAll ()
-        res.render ("product", {product, category});
+        res.render ("product", {product, category});         
   },
 
   byCategory: async (req, res) => {
