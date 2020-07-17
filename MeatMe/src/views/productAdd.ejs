@@ -14,14 +14,9 @@
     <div class="form-group justify-content-center row">
         <label for="inputTipoProducto" class="col-sm-3 col-form-label">Categoria: *</label>
         <div class="col-sm-7">
-<<<<<<< HEAD
           <select name="category" id="inputTipoProducto" class="form-control">
             
             <option selected value= "0">Seleccione una categoria</option>
-=======
-          <select name="category" id="inputCategoryProducto" class="form-control">
-            <option selected value="0">Seleccione una categoria</option>
->>>>>>> a95d84207f353baebdd980066bcce40223d5600e
             <% for(category of categorys) { %> 
             <option value="<%= category.id %>"><%= category.name %></option>
             <% } %> 
