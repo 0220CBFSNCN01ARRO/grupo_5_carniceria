@@ -16,8 +16,24 @@ var storage = multer.diskStorage({
           cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
   })
-  var upload = multer({ storage: storage });
-
+  const upload = multer({
+      storage,
+      limits: { fileSize: 1024 * 1024 * 1024 },
+      fileFilter(req, file, next) {
+        const isPhoto = file.mimetype !== 'image/png' && file.mimetype !== 'image/jpg' && file.mimetype !== 'image/jpeg' ? "" : file ;
+        console.log(file)
+        
+        if (isPhoto) {
+          next(null, true);
+        } else {
+            file.error = {
+                  error: "El formato de archivo debe ser de tipo PNG, JPG o JPEG"
+                };
+            req.file = file;
+          next(null, false);
+        }
+      }
+    });
 
 /* GET product page. */
 router.get('/', controllers.show);
@@ -27,7 +43,7 @@ router.get('/cartAdd/:category/:id',cart, controllers.cartAdd);
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create/',userRoute, adminRoute, controllers.create); 
-router.post('/create/',userRoute, adminRoute, upload.any(),[
+router.post('/create/',userRoute, adminRoute, upload.single("image"),[
       check('name').notEmpty(),
       check('category').notEmpty(),
       check('type').notEmpty(),
@@ -37,7 +53,7 @@ router.post('/create/',userRoute, adminRoute, upload.any(),[
 
 /*** EDIT ONE PRODUCT ***/ 
 router.get('/edit/:id',userRoute, adminRoute, controllers.edit); 
-router.put('/edit/:id',userRoute, adminRoute, upload.any(),[
+router.put('/edit/:id',userRoute, adminRoute, upload.single("image"),[
 check('name').notEmpty(),
 check('category').notEmpty(),
 check('type').notEmpty(),

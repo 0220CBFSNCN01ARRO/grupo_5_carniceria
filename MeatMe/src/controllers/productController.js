@@ -64,17 +64,26 @@ const controller = {
   },
 
   // Create -  guardar
-	store: (req, res) => {
+	store: async (req, res) => {
+    let errors = req.file.error;
+    console.log(errors)
+        if(errors != undefined){
+          const product = await db.Products.findAll()
+          const categorys = await db.Categorys.findAll()
+           return res.render("productAdd", { errors , product, categorys })
+        } else {
     product = req.body;
-        product.image = req.files ? req.files[0].filename : 'sin_imagen.jpg';
+        product.category_id = req.body.category
+        product.image = req.file ? req.file.filename : 'sin_imagen.jpg';
 
-        db.Products
+      await db.Products
             .create(product)
             .then(storedProduct => {
                 //storedProduct.addTags(req.body.keywords.split(' '))
                 return res.redirect(`/product`)
             })
             .catch(error => { console.log(error) });
+          }
 
 	},
 

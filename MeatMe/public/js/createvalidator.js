@@ -1,11 +1,11 @@
 window.addEventListener("load", () => {
     let formCreate = document.querySelector(".create");
-    let category = document.querySelector("#inputTipoProducto");
+    let category = document.querySelector("#inputCategoriaProducto");
     let name = document.querySelector("#inputNombreProducto");
     let type = document.querySelector("#inputTipoProducto");
     let weight = document.querySelector("#inputKgPorUnidad");
     let price = document.querySelector("#inputPrecioPorKg");
-
+    
 
     formCreate.addEventListener("submit", (e) => {
         let errors = [];
