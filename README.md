@@ -1,6 +1,9 @@
 ﻿#GRUPO 5 CARNICERIA#
----
 
+--Login Administrador-- 
+
+Usuario: pedroyapur@gmail.com
+Contraseña: pedro12345
 
 ----------
 
