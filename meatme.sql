@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 27-06-2020 a las 20:55:30
--- Versión del servidor: 5.7.24
--- Versión de PHP: 7.2.19
+-- Servidor: localhost
+-- Tiempo de generación: 18-07-2020 a las 21:20:08
+-- Versión del servidor: 10.4.13-MariaDB
+-- Versión de PHP: 7.2.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `meatme`
 --
-CREATE DATABASE IF NOT EXISTS `meatme` DEFAULT CHARACTER SET utf8 COLLATE utf8_icelandic_ci;
-USE `meatme`;
 
 -- --------------------------------------------------------
 
@@ -156,34 +154,18 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `category_id`, `type`, `price`, `weight`, `image`) VALUES
-(60, 'Pasta - Bauletti, Chicken White', '1', 'F', '107', '1', NULL),
-(61, 'Roe - Lump Fish, Red', '3', 'M', '194', '2', NULL),
-(62, 'Trout Rainbow Whole', '3', 'F', '186', '3', NULL),
-(63, 'Ecolab Crystal Fusion', '3', 'F', '345', '4', NULL),
-(64, 'Ice Cream Bar - Hageen Daz To', '1', 'F', '325', '5', NULL),
-(65, 'Milk - Condensed', '1', 'F', '215', '6', NULL),
-(66, 'Foil Cont Round', '3', 'F', '342', '7', NULL),
-(67, 'Muffin Hinge Container 6', '2', 'F', '94', '8', NULL),
-(68, 'Ecolab Silver Fusion', '3', 'F', '324', '9', NULL),
-(69, 'Samosa - Veg', '1', 'F', '224', '10', NULL),
-(70, 'Wine - Cotes Du Rhone', '1', 'F', '26', '11', NULL),
-(71, 'Cheese - Shred Cheddar / Mozza', '3', 'F', '374', '12', NULL),
-(72, 'Everfresh Products', '1', 'M', '19', '13', NULL),
-(73, 'Oven Mitts - 15 Inch', '1', 'M', '224', '14', NULL),
-(74, 'Lemon Tarts', '3', 'M', '383', '15', NULL),
-(75, 'Flavouring Vanilla Artificial', '3', 'M', '399', '16', NULL),
-(76, 'Bar - Sweet And Salty Chocolate', '2', 'F', '40', '17', NULL),
-(77, 'Yogurt - Peach, 175 Gr', '2', 'F', '392', '18', NULL),
-(78, 'Cranberries - Fresh', '2', 'F', '245', '19', NULL),
-(79, 'Flower - Daisies', '2', 'F', '372', '20', NULL),
-(80, 'Dried Peach', '1', 'F', '302', '21', NULL),
-(81, 'Eel - Smoked', '1', 'F', '107', '22', NULL),
-(82, 'Appetizer - Escargot Puff', '3', 'F', '385', '23', NULL),
-(83, 'Oil - Pumpkinseed', '2', 'M', '289', '24', NULL),
-(84, 'The Pop Shoppe - Lime Rickey', '2', 'F', '271', '25', NULL),
-(85, 'Shrimp, Dried, Small / Lb', '3', 'F', '212', '26', NULL),
-(86, 'Crush - Cream Soda', '1', 'M', '329', '27', NULL),
-(87, 'Persimmons', '2', 'M', '132', '28', NULL);
+(1, 'Vacio', '1', 'kg', '420', '1', 'image-1595098819627.jpg'),
+(2, 'Pollo Entero', '3', 'Kg', '100', '1', 'image-1595099549725.jpg'),
+(3, 'Pechugas', '3', 'Kg', '55', '1', 'image-1595099603130.jpg'),
+(4, 'Patitas', '3', 'Kg', '75', '1', 'image-1595099666400.jpeg'),
+(5, 'Costillas', '1', 'Kg', '325', '1', 'image-1595098887886.jpg'),
+(6, 'Matambre', '1', 'Kg', '215', '1', 'image-1595098963319.jpg'),
+(7, 'Vacio ', '2', 'Kg', '200', '1', 'image-1595099318989.jpg'),
+(8, 'Falda', '1', 'Kg', '250', '1', 'image-1595099011928.jpg'),
+(9, 'Jamon Redondo', '1', 'Kg', '220', '1', 'image-1595099050743.jpg'),
+(10, 'Bifes', '1', 'Kg', '200', '1', 'image-1595099083773.jpg'),
+(11, 'Solomillo', '2', 'Kg', '250', '1', 'image-1595099346335.jpg'),
+(12, 'Pechito', '2', 'Kg', '275', '1', 'image-1595099377951.jpg');
 
 -- --------------------------------------------------------
 
@@ -201,7 +183,7 @@ CREATE TABLE `users` (
   `city` varchar(100) COLLATE utf8_icelandic_ci NOT NULL,
   `state` varchar(100) COLLATE utf8_icelandic_ci NOT NULL,
   `avatar` varchar(100) COLLATE utf8_icelandic_ci NOT NULL,
-  `status` int(11) NOT NULL DEFAULT '0'
+  `status` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_icelandic_ci;
 
 --
@@ -209,36 +191,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `address`, `city`, `state`, `avatar`, `status`) VALUES
-(1, 'Ramiro', 'Mazzucco', 'ramazzucco@hotmail.com', 'ramiro', 'av. alberdi 600', 'Rosario', 'Santa Fe', '', 0),
-(2, 'Goober', 'Powell', 'gpowell0@geocities.com', 'Do97ztuGesG', '1 7th Plaza', 'Pittsburgh', 'Pennsylvania', 'https://robohash.org/architectoaspernaturea.png?size=50x50&set=set1', 1),
-(3, 'Venita', 'Vater', 'vvater1@huffingtonpost.com', 't15FRgk', '0832 Birchwood Way', 'Phoenix', 'Arizona', 'https://robohash.org/aliquamrepudiandaesed.png?size=50x50&set=set1', 0),
-(4, 'Shelia', 'Whitsey', 'swhitsey2@patch.com', 'uquGWvW6juiq', '163 Victoria Parkway', 'San Francisco', 'California', 'https://robohash.org/saepesapienteid.png?size=50x50&set=set1', 2),
-(5, 'Sindee', 'Urquhart', 'surquhart3@flickr.com', '2zwNVuNKFO', '8847 Messerschmidt Street', 'Saint Petersburg', 'Florida', 'https://robohash.org/accusamusnostrumalias.png?size=50x50&set=set1', 1),
-(6, 'Link', 'Moatt', 'lmoatt4@de.vu', 'mWEl2SQD', '10905 Portage Place', 'Trenton', 'New Jersey', 'https://robohash.org/estullamsoluta.png?size=50x50&set=set1', 1),
-(7, 'Valeria', 'Toye', 'vtoye5@phpbb.com', 'js5hrcvIz', '38 Dixon Trail', 'Daytona Beach', 'Florida', 'https://robohash.org/consequaturofficiaut.png?size=50x50&set=set1', 0),
-(8, 'Cordell', 'Charlewood', 'ccharlewood6@globo.com', 'hvdbDbOf', '59 Warbler Drive', 'Chico', 'California', 'https://robohash.org/estvoluptatemreiciendis.png?size=50x50&set=set1', 1),
-(9, 'Johnna', 'Shippam', 'jshippam7@parallels.com', 'Z5TUPdHuVMp', '17 Messerschmidt Parkway', 'Lehigh Acres', 'Florida', 'https://robohash.org/eosvoluptasnecessitatibus.png?size=50x50&set=set1', 1),
-(10, 'Briana', 'Maro', 'bmaro8@foxnews.com', 'zbp9YKTGF8Kh', '3717 Johnson Crossing', 'Chattanooga', 'Tennessee', 'https://robohash.org/cupiditateremaccusantium.png?size=50x50&set=set1', 1),
-(11, 'Bob', 'Bunny', 'bbunny9@webnode.com', 'LrZuaaQXD', '51 Kropf Way', 'Houston', 'Texas', 'https://robohash.org/quisquamvelvoluptatem.png?size=50x50&set=set1', 1),
-(12, 'Augustine', 'Chambers', 'achambersa@homestead.com', 'ioJvidelUAuf', '3 Mesta Lane', 'Washington', 'District of Columbia', 'https://robohash.org/aliquidmagnamveritatis.png?size=50x50&set=set1', 1),
-(13, 'Doro', 'Sitch', 'dsitchb@mozilla.com', 'hhrRL25F48iC', '0431 Burrows Way', 'Atlanta', 'Georgia', 'https://robohash.org/necessitatibusodioab.png?size=50x50&set=set1', 1),
-(14, 'Rik', 'Heed', 'rheedc@wikimedia.org', '6lSr6Jda', '1757 Havey Avenue', 'Evansville', 'Indiana', 'https://robohash.org/nihilquilibero.png?size=50x50&set=set1', 1),
-(15, 'Timi', 'Gobourn', 'tgobournd@indiegogo.com', '6sJXio1Dq9', '871 Burning Wood Hill', 'Brooklyn', 'New York', 'https://robohash.org/dictainventorevoluptas.png?size=50x50&set=set1', 2),
-(16, 'Daveta', 'McGarrahan', 'dmcgarrahane@google.ru', 'KTFNthvCIdGF', '796 Namekagon Way', 'Topeka', 'Kansas', 'https://robohash.org/velexcepturieum.png?size=50x50&set=set1', 1),
-(17, 'Husein', 'Tolumello', 'htolumellof@drupal.org', 'aE7GHLa', '8682 Declaration Drive', 'Phoenix', 'Arizona', 'https://robohash.org/etexplicabovero.png?size=50x50&set=set1', 2),
-(18, 'Ginger', 'Howel', 'ghowelg@tiny.cc', 'R8IwkMFF', '821 Hudson Junction', 'New York City', 'New York', 'https://robohash.org/animiquaequaerat.png?size=50x50&set=set1', 1),
-(19, 'Stephie', 'Pratte', 'spratteh@wikipedia.org', 'DJWgyOm', '29 Norway Maple Trail', 'Pompano Beach', 'Florida', 'https://robohash.org/estconsequaturquae.png?size=50x50&set=set1', 2),
-(20, 'Kellby', 'Yanyushkin', 'kyanyushkini@tinyurl.com', 'RberHVKQ', '9 Buell Avenue', 'Austin', 'Texas', 'https://robohash.org/laborumnihilinventore.png?size=50x50&set=set1', 1),
-(21, 'Odell', 'Menelaws', 'omenelawsj@prweb.com', '1JxIbcxS', '329 Helena Crossing', 'Saint Paul', 'Minnesota', 'https://robohash.org/earumanostrum.png?size=50x50&set=set1', 1),
-(22, 'Berthe', 'Roddan', 'broddank@t-online.de', 'yH6T8KGFx', '834 Annamark Point', 'Omaha', 'Nebraska', 'https://robohash.org/repellatquosqui.png?size=50x50&set=set1', 1),
-(23, 'Katherina', 'Stuart', 'kstuartl@flickr.com', 'QaeSSeFaq', '188 Lakewood Drive', 'Albany', 'New York', 'https://robohash.org/voluptatemoditsed.png?size=50x50&set=set1', 0),
 (24, 'Pauly', 'Cockrell', 'pcockrellm@g.co', 'TMU9teTkl', '47908 Melby Point', 'Dallas', 'Texas', 'https://robohash.org/etrepellendusearum.png?size=50x50&set=set1', 1),
 (25, 'Flemming', 'Bessent', 'fbessentn@163.com', 'E5UxxZFkW', '13776 Maryland Pass', 'San Jose', 'California', 'https://robohash.org/accusantiumfugapraesentium.png?size=50x50&set=set1', 2),
-(26, 'Mimi', 'Happs', 'mhappso@shinystat.com', '0M8YMAEd', '4347 Pleasure Park', 'Shawnee Mission', 'Kansas', 'https://robohash.org/suntdolorumculpa.png?size=50x50&set=set1', 1),
-(27, 'Lois', 'Drabble', 'ldrabblep@phoca.cz', 'v1cq7o7', '90 Mesta Pass', 'Austin', 'Texas', 'https://robohash.org/nonnostrumenim.png?size=50x50&set=set1', 1),
-(28, 'Cookie', 'Quipp', 'cquippq@ox.ac.uk', 'AlqbxZ6nUP6', '78 Lunder Junction', 'Fort Pierce', 'Florida', 'https://robohash.org/quaedictaipsum.png?size=50x50&set=set1', 0),
-(29, 'Scotty', 'Murkitt', 'smurkittr@webnode.com', 'ZAuvwWhgzVSS', '626 Bellgrove Way', 'Winston Salem', 'North Carolina', 'https://robohash.org/ipsumvellaboriosam.png?size=50x50&set=set1', 2),
-(30, 'Adaline', 'Fowley', 'afowleys@sbwire.com', 'VfOvP4E', '2595 Rusk Court', 'Johnstown', 'Pennsylvania', 'https://robohash.org/rationesuscipitsit.png?size=50x50&set=set1', 2);
+(35, 'Pedro Angel', 'Yapur', 'pedroyapur@gmail.com', '$2b$10$9o9qFWpEG7tS4.WBQ9Hxg.nwhnFvhk5Sai02NVRPii/J2fcGwPmPK', 'calle 1234', 'rosario', 'santa fe', 'avatar-1594830411699.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -359,13 +314,13 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de la tabla `user_product`
