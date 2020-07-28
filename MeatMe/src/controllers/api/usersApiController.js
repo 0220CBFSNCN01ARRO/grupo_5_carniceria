@@ -12,6 +12,7 @@ const {
 
 
 module.exports = {
+    
 
     index: async (req, res) => {
         const users = await db.Users.findAll();
@@ -27,11 +28,6 @@ module.exports = {
                     first_name: user.first_name,
                     last_name: user.last_name,
                     email: user.email,
-                    address: user.address,
-                    city: user.city,
-                    state: user.state,
-                    avatar: user.avatar,
-                    status: user.status,
                     link: `/api/apiUsers/${user.id}`
                 }
             })
@@ -48,7 +44,6 @@ module.exports = {
                 link: '/api/apiUsers/' + req.params.id
             },
             data: {
-                id: user.id,
                 first_name: user.first_name,
                 last_name: user.last_name,
                 email: user.email,

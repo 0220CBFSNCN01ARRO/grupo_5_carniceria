@@ -103,7 +103,7 @@ const controller = {
     db.Products.update(req.body, {
             where: {id: req.params.id}
         })
-        .then(() => res.redirect(`/product`)
+        .then(() => res.redirect(`/admin`)
         .catch(error => { console.log(error) })  
       )
   },

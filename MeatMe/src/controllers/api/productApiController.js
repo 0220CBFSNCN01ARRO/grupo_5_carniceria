@@ -6,11 +6,34 @@ const controller = {
         const products = await db.Products.findAll({
             include:['category']
         });
+        
+            const vacunos = await db.Products.findAll({
+                where: {
+                    category_id: 1
+                },
+            });  
+            const cerdos = await db.Products.findAll({
+                where: {
+                    category_id: 2
+                },
+            });
+            const pollos = await db.Products.findAll({
+                where: {
+                    category_id: 3
+                },
+            });
+
         res.json({
             meta:{
                 status: 200,
                 totalItems: products.length,
                 link: '/api/product'
+            },
+            categories: {
+                vacuno: vacunos.length,
+                cerdo: cerdos.length,
+                pollo: pollos.length,
+            
             },
             data: products.map(product => {
                 return {
