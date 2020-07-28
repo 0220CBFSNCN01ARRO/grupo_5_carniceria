@@ -64,7 +64,7 @@ const controller = {
                     type: product.type,
                     price: product.price,
                     weight: product.weight,
-                    image: product.image,
+                    image: `/img/${product.image}`,
                     category: product.category,
                     link: `/api/product/${product.id}`
                 }
