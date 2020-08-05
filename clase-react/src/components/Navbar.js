@@ -30,7 +30,7 @@ function Navbar(props) {
         <ul className="navbar-nav ml-auto">
             {
                 // links.map(link => <NavbarItem icon= {link.icon} value={link.value} color={link.color} url={link.url} /> )
-                links.map((onelink,i) => <NavbarItem hey= {i}{...onelink} /> )
+                links.map((onelink,i) => <NavbarItem key={i}{...onelink} /> )
             }
 
             <div className="topbar-divider d-none d-sm-block"></div>

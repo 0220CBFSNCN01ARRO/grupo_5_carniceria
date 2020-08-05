@@ -20,9 +20,11 @@ var storage = multer.diskStorage({
       storage,
       limits: { fileSize: 1024 * 1024 * 1024 },
       fileFilter(req, file, next) {
-        const isPhoto = file.mimetype !== 'image/png' && file.mimetype !== 'image/jpg' && file.mimetype !== 'image/jpeg' ? "" : file ;
-        console.log(file)
         
+        const isPhoto = file.mimetype !== 'image/png' && file.mimetype !== 'image/jpg' && file.mimetype !== 'image/jpeg' ? "" : file ;
+        
+        console.log(file, "----------->",isPhoto)
+
         if (isPhoto) {
           next(null, true);
         } else {
