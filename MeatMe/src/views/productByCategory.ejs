@@ -15,6 +15,7 @@
             <div class="card-body">
                 <h5 class="card-title"><%= producto.name %></h5>
                 <p class="card-text"><%= producto.name %> de <%= category[0].name %></p>
+                <h6 class="card-title">$<%= producto.price %></h6>
             </div>
             <a class="btn btn-primary" href="/product/cartAdd/<%= producto.category_id %>/<%= producto.id %>" role="button">Agregar al carrito</a>
         </div>
