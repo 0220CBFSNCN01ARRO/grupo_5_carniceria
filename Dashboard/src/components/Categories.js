@@ -35,7 +35,7 @@ class Categories extends Component {
                                 return (
                                     <div key={i} className="col-lg-6 mb-4">
                                         <Category>
-                                            {item.category} <span class="font-weight-light">({item.products} Productos)</span>
+                                            {item.category} <span className="font-weight-light">({item.products} Productos)</span>
                                         </Category>
                                     </div>
                                 )

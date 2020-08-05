@@ -87,7 +87,25 @@ const controller = {
         })
 
     },
-    allProducts: (req, res) => {
+    allProducts: async (req, res) => {
+        const products = await db.Products.findAll ({include: ['category']});
+        res.json ({
+            meta: {
+                status: 200,
+                totalItems: products.length,
+                link: 'api/dashboard/allProducts'
+            },
+            data: products.map (product => {
+                return {
+                    id: product.id,
+                    name: product.name,
+                    category: product.category.name,
+                    price: product.price,
+                    type: product.type,
+                    weight: product.weight
+                }
+            })
+        })
 
     }
 }
