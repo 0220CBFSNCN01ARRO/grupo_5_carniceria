@@ -3,15 +3,17 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const methodOverride =  require('method-override');
-var session = require ('express-session')
-var auth = require('./middlewares/auth')
+var session = require ('express-session');
+var auth = require('./middlewares/auth');
+var cors = require('cors');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const productRouter = require('./routes/product');
 
-var usersApiRouter = require('./routes/api/apiUsers')
-var productApiRouter = require('./routes/api/product')
+var usersApiRouter = require('./routes/api/apiUsers');
+var productApiRouter = require('./routes/api/product');
+var dashboardApiRoter = require("./routes/Api/dashboard");
 
 
 const app = express();
@@ -40,8 +42,18 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product', productRouter);
 
+app.use(cors())
+app.get('/api/dashboard', function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for all origins!'})
+})
+ 
+app.listen(80, function () {
+  console.log('CORS-enabled web server listening on port 80')
+})
+
 app.use('/api/apiUsers' ,usersApiRouter);
 app.use('/api/product' ,productApiRouter);
+app.use("/api/dashboard", dashboardApiRoter);
 
 
 // catch 404 and forward to error handler

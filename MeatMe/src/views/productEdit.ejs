@@ -69,6 +69,9 @@
       <div class="form-group justify-content-center row">
         <label class="col-3" for="imagen">Imagen: </label>
         <input class="col-7" id="imagen" type="file" name="image" value=<%= Products.image %> placeholder="">
+        <% if(typeof errors != 'undefined') { %>
+          <div class="pl-5 mt-3"><p class="text-danger"><%= errors.error %> </p></div>
+        <% } %> 
     </div>
     <div class="form-group justify-content-around row">
         <button type="submit" class="btn btn-primary my-5">Modificar</button>
