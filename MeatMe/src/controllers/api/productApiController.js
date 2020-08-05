@@ -59,17 +59,6 @@ const controller = {
                 link: '/api/product/' + req.params.id
             },
             data: {
-<<<<<<< HEAD
-                id: product.id,
-                name: product.name,
-                type: product.type,
-                price: product.price,
-                weight: product.weight,
-                image: `/img/${product.image}`,
-                category: product.category,
-                link: `/api/product/${product.id}`
-            }
-=======
                     id: product.id,
                     name: product.name,
                     type: product.type,
@@ -79,7 +68,6 @@ const controller = {
                     category: product.category,
                     link: `/api/product/${product.id}`
                 }
->>>>>>> 7fca8aa4fbeddc91a42b0310d85210e4e2a122f3
         })
     }
 }
