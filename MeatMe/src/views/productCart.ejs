@@ -9,43 +9,73 @@
                         <tr>
                             <th class="producto-th">Producto</th>
                             <th class="cantidad-th">Cantidad</th>
-                            <th class="precio-th">Precio</th>
+                            <th class="precio-th text-center">Precio</th>
                         </tr>
                     </thead>
                     <tbody>
                         <% if(cart) { %> 
                             <% for(item of cart) { %> 
-                        <tr>
+                        <tr class="item">
                             <td class="product-col col-8 p-0">
                                 <img class="thumb" src="/img/<%= item.product.image %> " alt="">
                                 <div class="title">
                                     <h4><%= item.product.name %> </h4>
-                                    <p>$ <%= item.product.price %></p>
+                                    <div class="d-flex align-items-center justify-content-start"><span>$ </span><p class="mb-0"><%= item.product.price %></p></div>
                                 </div>
                             </td>
                             <td class="cantidad-col col-1 p-0">
-                                <div class="cantidad d-flex w-50 mr-0">
+                                <div class="cantidad d-flex mr-0">
                                     <div class="pro-cant">
-                                        <input class="d-flex w-100" type="text" value="1">
+                                        <% if(item.product.type == "Kg") { %> 
+                                        <select name="type" class="form-control cart-type ">
+                                            <option  value="0.5">0.5</option>
+                                            <option  selected value="1">1</option>
+                                            <option  value="1.5">1.5</option>
+                                            <option  value="2">2</option>
+                                            <option  value="2.5">2.5</option>
+                                            <option  value="3">3</option>
+                                            <option  value="3.5">3.5</option>
+                                            <option  value="4">4</option>
+                                            <option  value="4.5">4.5</option>
+                                            <option  value="5">5</option>
+                                        </select>
+                                            <% } else { %>
+                                                    <select name="type" class="form-control cart-type text-center">
+                                                        <option  selected value="1">1</option>
+                                                        <option  value="2">2</option>
+                                                        <option  value="3">3</option>
+                                                        <option  value="4">4</option>
+                                                        <option  value="5">5</option>
+                                                        <option  value="6">6</option>
+                                                        <option  value="7">7</option>
+                                                        <option  value="8">8</option>
+                                                        <option  value="9">9</option>
+                                                        <option  value="10">10</option>
+                                                    </select>
+                                                <% } %> 
+                                        <!-- <input class="d-flex w-100" type="text" value="1"> -->
                                     </div>
                                 </div>
                             </td>
                             <td class="total-col w-25 col-3 p-0">
-                                <span>$ </span><h4 class="precio"><%= item.product.price %> </h4>
+                                <div class="d-flex align-items-center justify-content-center"><span class="h5 mr-3">$ </span><h4 class="precio"><%= item.product.price %></h4></div>
                             </td>
                         </tr>
                         <% } %> 
-                    <% } %> 
+                    <% } else {} %> 
                     </tbody>
                 </table>
             </div>
-            <div class="total-cost row pt-3 bg-white border-top border-dark">
-               <div class="col-8 col-md-9 col-lg-9">
+            <div class="total-cost row  bg-white border-top border-bottom border-dark">
+               <div class="col-8 col-md-9 col-lg-9 d-flex align-items-center ">
                    <h6 class="h1 mb-0">Total</h6>
                 </div>
-                <div class="col-4 col-md-3 col-lg-3 text-right border-left border-dark"> 
-                    <p class="h2 mb-0"><span>$ </span>5000</p>
+                <div class="col-4 col-md-3 col-lg-3 text-right border-left border-dark d-flex align-items-center justify-content-center"> 
+                    <span class="h3 mb-0 mr-3">$ </span><p class="h2 mb-0 precio-total"></p>
                 </div>
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="btn btn-primary my-5" type="submit" href="">COMPRAR</button>
             </div>
         </div>
     </div>
