@@ -13,65 +13,74 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% if(cart) { %> 
-                            <% for(item of cart) { %> 
-                        <tr class="item">
+                        <% if(cart) { %>
+                        <% for(item of cart) { %>
+                        <tr class="item" id="<%= item.product.id %>">
                             <td class="product-col col-8 p-0">
                                 <img class="thumb" src="/img/<%= item.product.image %> " alt="">
                                 <div class="title">
                                     <h4><%= item.product.name %> </h4>
-                                    <div class="d-flex align-items-center justify-content-start"><span>$ </span><p class="mb-0"><%= item.product.price %></p></div>
+                                    <div class="d-flex align-items-center justify-content-start"><span>$ </span>
+                                        <p class="mb-0"><%= item.product.price %></p>
+                                    </div>
                                 </div>
                             </td>
                             <td class="cantidad-col col-1 p-0">
                                 <div class="cantidad d-flex mr-0">
                                     <div class="pro-cant">
-                                        <% if(item.product.type == "Kg") { %> 
+                                        <% if(item.product.type == "Kg") { %>
                                         <select name="type" class="form-control cart-type ">
-                                            <option  value="0.5">0.5</option>
-                                            <option  selected value="1">1</option>
-                                            <option  value="1.5">1.5</option>
-                                            <option  value="2">2</option>
-                                            <option  value="2.5">2.5</option>
-                                            <option  value="3">3</option>
-                                            <option  value="3.5">3.5</option>
-                                            <option  value="4">4</option>
-                                            <option  value="4.5">4.5</option>
-                                            <option  value="5">5</option>
+                                            <option value="0.5">0.5</option>
+                                            <option selected value="1">1</option>
+                                            <option value="1.5">1.5</option>
+                                            <option value="2">2</option>
+                                            <option value="2.5">2.5</option>
+                                            <option value="3">3</option>
+                                            <option value="3.5">3.5</option>
+                                            <option value="4">4</option>
+                                            <option value="4.5">4.5</option>
+                                            <option value="5">5</option>
                                         </select>
-                                            <% } else { %>
-                                                    <select name="type" class="form-control cart-type text-center">
-                                                        <option  selected value="1">1</option>
-                                                        <option  value="2">2</option>
-                                                        <option  value="3">3</option>
-                                                        <option  value="4">4</option>
-                                                        <option  value="5">5</option>
-                                                        <option  value="6">6</option>
-                                                        <option  value="7">7</option>
-                                                        <option  value="8">8</option>
-                                                        <option  value="9">9</option>
-                                                        <option  value="10">10</option>
-                                                    </select>
-                                                <% } %> 
-                                        <!-- <input class="d-flex w-100" type="text" value="1"> -->
+                                        <% } else { %>
+                                        <select name="type" class="form-control cart-type text-center">
+                                            <option selected value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+                                        </select>
+                                        <% } %>
                                     </div>
                                 </div>
                             </td>
                             <td class="total-col w-25 col-3 p-0">
-                                <div class="d-flex align-items-center justify-content-center"><span class="h5 mr-3">$ </span><h4 class="precio"><%= item.product.price %></h4></div>
+                                <div class="d-flex align-items-center justify-content-center"><span class="h5 mr-3">$
+                                    </span>
+                                    <h4 class="precio"><%= item.product.price %></h4>
+                                </div>
+                            </td>
+                            <td>
+                                <button role="button" data-id="<%=item.product.id %>" class="btn btn-primary eliminar">ELIMINAR</button>
                             </td>
                         </tr>
-                        <% } %> 
-                    <% } else {} %> 
+                        <% } %>
+                        <% } else {} %>
                     </tbody>
                 </table>
             </div>
             <div class="total-cost row  bg-white border-top border-bottom border-dark">
-               <div class="col-8 col-md-9 col-lg-9 d-flex align-items-center ">
-                   <h6 class="h1 mb-0">Total</h6>
+                <div class="col-8 col-md-9 col-lg-9 d-flex align-items-center ">
+                    <h6 class="h1 mb-0">Total</h6>
                 </div>
-                <div class="col-4 col-md-3 col-lg-3 text-right border-left border-dark d-flex align-items-center justify-content-center"> 
-                    <span class="h3 mb-0 mr-3">$ </span><p class="h2 mb-0 precio-total"></p>
+                <div
+                    class="col-4 col-md-3 col-lg-3 text-right border-left border-dark d-flex align-items-center justify-content-center">
+                    <span class="h3 mb-0 mr-3">$ </span>
+                    <p class="h2 mb-0 precio-total"></p>
                 </div>
             </div>
             <div class="d-flex justify-content-end">
