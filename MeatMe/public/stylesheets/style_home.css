@@ -27,7 +27,7 @@ div.seccionprincipal {
     height:100%;
     width: 100%;
 }
-#logo-menu {
+.logo-menu {
     width: 40%;
 }
 
@@ -51,8 +51,16 @@ footer, footer li{
    object-fit: cover;
    margin: auto;
    padding-top: 1px;
-
 }
+
+.card-img-prof {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: auto;
+    padding-top: 1px;
+ 
+ }
 .total-cost {
     background-color: khaki;
 }
